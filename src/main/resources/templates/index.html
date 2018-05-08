@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Store</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<header class="container">
+    <section class="row">
+        <div class="col-lg-8 d-flex justify-content-center">
+            <a th:href="@{/musicstore/home}"><img src="logo.png" th:src="@{/image/logo.png}" alt="Logotipo" class="logotipo"
+                                      title="Voltar ao Home"></a>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-outline-secondary btn-header" data-toggle="modal"
+                    data-target="#exampleModalCenter">
+                Login
+            </button>
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3 class="modal-title" id="exampleModalLongTitle">Login</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group col-md-12">
+                                <label for="usuarioLogin">Usuário</label>
+                                <input name="usuarioLogin" type="text" class="form-control" id="usuarioLogin"
+                                       placeholder="Usuário" size="30" required>
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="senhaLogin">Senha</label>
+                                <input name="senhaLogin" type="text" class="form-control" id="senhaLogin"
+                                       placeholder="Senha" size="30" required>
+                            </div>
+                            <div class="novoUsu">
+                                <label>Novo usuário? <a th:href="@{/musicstore/cadastrousuario}">Criar cadastro</a></label>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" >Entrar</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-outline-secondary btn-header"
+                    th:onclick="@{/musicstore/carrinho}"><i class="fas fa-shopping-cart"></i>
+                Carrinho
+            </button>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-12">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" th:href="@{/musicstore/home}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cordas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Violão</a>
+                            <a class="dropdown-item" href="#">Guitarra</a>
+                            <a class="dropdown-item" href="#">Baixo</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Amplificadores</a>
+                            <a class="dropdown-item" href="#">Encordoamentos</a>
+                            <a class="dropdown-item" href="#">Efeitos</a>
+                            <a class="dropdown-item" href="#">Acessórios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Percussão
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sopro
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Teclas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Áudio
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Acessórios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 pesquisa" type="search" placeholder="Pesquisa"
+                           aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i> Buscar
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </section>
+</header>
+
+<main class="container">
+    <div class="row">
+        <section id="carouselExampleIndicators" class="carousel slide col-lg-12" data-ride="carousel">
+            <h2 style="display: none">Validação w3</h2>
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="boss.jps" th:src="@{/image/boss.jpg}"alt="Primeiro Slide Boss Pedais">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="gibson_flyingv_ad.jpg" th:src="@{/image/gibson_flyingv_ad.jpg}"
+                         alt="Segundo Slide FlyingV Gibson">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="fender-tele-ad.jpg" th:src="@{/image/fender-tele-ad.jpg}"
+                         alt="Terceiro Slide Fender Telecaster">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </section>
+
+    </div>
+
+    <section class="container">
+        <div class="row">
+            <hr class="hr col-lg-12">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <h1 class="titulo">Lançamentos</h1>
+            </div>
+            <div class="card-deck">
+                <div class="card col-lg-3 col-md-6 col-sm-6">
+                    <figure>
+                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                                          src="martin-d-100.jpg"
+                                                                                          th:src="@{/image/martin-d-100.jpg}"
+                                                                                          alt="Violão Martin D-100"></a>
+                    </figure>
+                    <hr>
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                            unidades fabricadas</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-6 col-sm-6">
+                    <figure>
+                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                                          src="martin-d-100.jpg"
+                                                                                          th:src="@{/image/martin-d-100.jpg}"
+                                                                                          alt="Violão Martin D-100"></a>
+                    </figure>
+                    <hr>
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                            unidades fabricadas</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-6 col-sm-6">
+                    <figure>
+                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                                          src="martin-d-100.jpg"
+                                                                                          th:src="@{/image/martin-d-100.jpg}"
+                                                                                          alt="Violão Martin D-100"></a>
+                    </figure>
+                    <hr>
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                            unidades fabricadas</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-6 col-sm-6">
+                    <figure>
+                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                                          src="martin-d-100.jpg"
+                                                                                          th:src="@{/image/martin-d-100.jpg}"
+                                                                                          alt="Violão Martin D-100"></a>
+                    </figure>
+                    <hr>
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                            unidades fabricadas</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12" style="margin:10px"></div>
+            <div class="card-deck">
+                <div class="card col-lg-3 col-md-6 col-sm-6">
+                    <figure>
+                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                                          src="martin-d-100.jpg"
+                                                                                          th:src="@{/image/martin-d-100.jpg}"
+                                                                                          alt="Violão Martin D-100"></a>
+                    </figure>
+                    <hr>
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                            unidades fabricadas</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-6 col-sm-6">
+                    <figure>
+                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                                          src="martin-d-100.jpg"
+                                                                                          th:src="@{/image/martin-d-100.jpg}"
+                                                                                          alt="Violão Martin D-100"></a>
+                    </figure>
+                    <hr>
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                            unidades fabricadas</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-6 col-sm-6">
+                    <figure>
+                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                                          src="martin-d-100.jpg"
+                                                                                          th:src="@{/image/martin-d-100.jpg}"
+                                                                                          alt="Violão Martin D-100"></a>
+                    </figure>
+                    <hr>
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                            unidades fabricadas</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+                    </div>
+                </div>
+                <div class="card col-lg-3 col-md-6 col-sm-6">
+                    <figure>
+                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                                          src="martin-d-100.jpg"
+                                                                                          th:src="@{/image/martin-d-100.jpg}"
+                                                                                          alt="Violão Martin D-100"></a>
+                    </figure>
+                    <hr>
+                    <div class="card-body">
+                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                            unidades fabricadas</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <nav aria-label="Page navigation example" class="pagination col-lg-12 d-flex justify-content-center">
+        <ul class="pagination">
+            <li class="page-item disabled"><a class="page-link" href="#">Anterior</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1<span class="sr-only">(current)</span></a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+        </ul>
+    </nav>
+</main>
+
+<footer class="container col-lg-12">
+    <hr class="hr col-lg-10">
+    <p class="d-flex justify-content-center">Copyright&copy; Music Club, Inc. - Todos Direitos Reservados 2018 &emsp;<a
+            href="politica_privacidade.html">Política de Privacidade</a>&ensp;|&ensp;
+        <a href="sobre_nos.html">Sobre Nós</a>&nbsp;|&nbsp;<a href="fale_conosco.html">Fale Conosco</a>&nbsp;|&nbsp; <a
+                href="http://www.planalto.gov.br/ccivil_03/Leis/L8078.htm">Direito do Consumidor</a></p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

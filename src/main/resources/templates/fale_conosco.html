@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Fale Conosco | Music Store</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<header class="lg-col-12 d-flex justify-content-center">
+    <img src="../static/Images/logo.png" alt="Logotipo">
+</header>
+<main class="container d-flex justify-content-center">
+    <form action="#" class="col-lg-10 row">
+        <label for="fname">Nome</label>
+        <input type="text" id="fname" name="firstname" placeholder="Seu nome">
+
+        <label for="fale_conosco_email">Seu email</label>
+        <input type="email" id="fale_conosco_email" name="email" placeholder="Seu email">
+
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone" name="telefone" placeholder="Seu telefone">
+
+
+        <label for="assunto">Assunto</label>
+        <select class="custom-select" id="assunto">
+            <option selected>Escolher</option>
+            <option value="1">Problemas na compra</option>
+            <option value="2">Problemasa com produto</option>
+            <option value="3">Dúvidas</option>
+            <option value="4">Sujestões</option>
+            <option value="5">Reclamações</option>
+        </select>
+
+        <label for="descrição">Descrição</label>
+        <textarea id="descrição" name="descrição" placeholder="Escreva aqui" style="height:400px"></textarea>
+
+        <button type="submit" class="btn btn-primary" onclick="voltar()">Voltar</button>
+        <button type="submit" value="Enviar" class="btn btn-primary">Enviar</button>
+    </form>
+</main>
+<footer class="container col-lg-12">
+    <hr class="hr col-lg-10">
+    <p class="d-flex justify-content-center col-lg-5 col-sm-12" style="float: left">Copyright&copy Music Club, Inc. -
+        Todos Direitos Reservados 2018 &emsp;</p>
+    <p class="d-flex justify-content-center col-lg-7 col-sm-12"><a href="politica_privacidade.html">Política de
+        Privacidade</a>&ensp;|&ensp;
+        <a href="#">Sobre Nós</a>&nbsp;|&nbsp;<a href="#">Fale Conosco</a>&nbsp;|&nbsp; <a
+                href="http://www.planalto.gov.br/ccivil_03/Leis/L8078.htm">Direito do Consumidor</a></p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

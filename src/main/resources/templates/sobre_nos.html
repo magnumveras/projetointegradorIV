@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sobre Nós | Music Store</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Set a background color */
+        body {
+            background-color: #b3b3b3;
+            font-family: Helvetica, sans-serif;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: white;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+
+        /* Container around content */
+        .container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        /* The circles on the timeline */
+        .container::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: white;
+            border: 4px solid #FF9F55;
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Place the container to the left */
+        .left {
+            left: 0;
+        }
+
+        /* Place the container to the right */
+        .right {
+            left: 50%;
+        }
+
+        /* Add arrows to the left container (pointing right) */
+        .left::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            right: 30px;
+            border: medium solid white;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+
+        /* Add arrows to the right container (pointing left) */
+        .right::before {
+            content: " ";
+            height: 0;
+            position: absolute;
+            top: 22px;
+            width: 0;
+            z-index: 1;
+            left: 30px;
+            border: medium solid white;
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+
+        /* Fix the circle for containers on the right side */
+        .right::after {
+            left: -16px;
+        }
+
+        /* The actual content */
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            position: relative;
+            border-radius: 6px;
+        }
+
+        /* Media queries - Responsive timeline on screens less than 600px wide */
+        @media screen and (max-width: 600px) {
+            /* Place the timelime to the left */
+            .timeline::after {
+                left: 31px;
+            }
+
+            /* Full-width containers */
+            .container {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            /* Make sure that all arrows are pointing leftwards */
+            .container::before {
+                left: 60px;
+                border: medium solid white;
+                border-width: 10px 10px 10px 0;
+                border-color: transparent white transparent transparent;
+            }
+
+            /* Make sure all circles are at the same spot */
+            .left::after, .right::after {
+                left: 15px;
+            }
+
+            /* Make all right containers behave like the left ones */
+            .right {
+                left: 0%;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Nossa História <a href="#incio" style="text-decoration: none">Início</a></h1>
+</header>
+<main class="timeline">
+    <section class="container left">
+        <div class="content">
+            <h2>Continuar</h2>
+            <p>...</p>
+        </div>
+    </section>
+    <section class="container right">
+        <div class="content">
+            <h2>1940 - A Segunda Guerra Mundial</h2>
+            <p><em><b>criador</b></em> foi convocado para servir na grande guerra, e a economia mundial parou para
+                assistir a guerra, com isso sua loja ficaria fechada</p>
+            <img src="https://cdn.onthewight.com/wp-content/2014/06/British-soldiers-marching-to-the-Somme-by-Anders.jpg"
+                 width="100%" alt="Soldados Marchando"> <!--https://thumbs.gfycat.com/AdoredChillyBoilweevil-max-1mb.gif-->
+        </div>
+    </section>
+    <section class="container left">
+        <div class="content">
+            <h2>1937 - A Felicidade</h2>
+            <p>Agora o <em><b>criador</b></em> sentia-se realizado, seu sonho havia se concretizado, poderia viver
+                do que era apaixonado, sua loja sediava apresentações, e a loja começou a ser referência para os musicos
+                das cidades vizinhas</p>
+        </div>
+    </section>
+    <section class="container right">
+        <div class="content">
+            <h2>1935 - A Construção do Sonho</h2>
+            <p>Após dois anos de estudos e muita dedicação, <em><b>criador</b></em> e seu pai já tinha criado
+                instrumentos suficientes para uma boa parte da cidade e resolvem compram uma pequena loja que estava
+                abandonada à tempos em sua cidade e juntos constroem a primeira loja. </p>
+            <img src="https://phillymusiccommunity.files.wordpress.com/2012/02/music-store.jpg" width="100%"
+                 alt="Balcão Loja Antiga">
+        </div>
+    </section>
+    <section class="container left">
+        <div class="content">
+            <h2>1933 - O Sonho Resurge</h2>
+            <p>Após anos de infelicidade trabalhando no que não gosta, <em><b>criador</b></em> volta para sua cidade
+                natal para ficar um tempo com seus pais. E eis que mais uma vez a banda retoma todas as memórias de
+                quando era criança. Foi ai que <em><b>criador</b></em> resolve largar tudo para se arriscar em algo
+                novo, algo emocionante, que lhe trazia felicidade. Com seu pai, começam a aprender a arte da
+                luthieraria e como tocar.</p>
+        </div>
+    </section>
+    <section class="container right">
+        <div class="content">
+            <h2>1930 - A Decepção Profissional</h2>
+            <p>Ao se formar, <em><b>criador</b></em> começa uma parceria com um amigo de faculdade e criam um escritório
+                juntos, porém ao passar do tempo, <em><b>criador</b></em> percebe que não consegue sentir-se realizado
+                como seus colegas de profissão.</p>
+        </div>
+    </section>
+    <section class="container left">
+        <div class="content">
+            <h2>1927 - O Sonho Surge</h2>
+            <p>Em uma das férias da faculdade, o <em><b>criador</b></em> retorna para sua cidade para rever seus
+                pais, e num domingo pela manhã ele ouve o som da velha banda tocando na praça e todas as lembranças de
+                criança se revivem em sua mente. E foi ai que ele pensou, apesar de tantos anos, porque sua cidade ainda
+                não tinha nenhuma loja de instrumentos musicais</p>
+        </div>
+    </section>
+    <section class="container right">
+        <div class="content">
+            <h2>1919 - Onde Tudo Começou</h2>
+            <p>O <em><b>criador</b></em> morava em uma pequena cidade do interior, e todos os domingos acordava ansioso
+                pela aprensetação da banda que sempre se apresentava em sua cidade na praça principal. Seu pai sempre o
+                levava. Porém não existiam escolas de música, muito menos lojas de instrumentos musicais em sua cidade.
+                O que impossibilitava qualquer um da região de seguir a carreira de musico.</p>
+            <img  id="inicio" src="https://kehilalinks.jewishgen.org/kraziai/images/kraziai/Kraziai%20Musicians%20cir%201939.jpg"
+                 width="100%" alt="Musicos Foto Antiga">
+        </div>
+    </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Local de Entrega | Music Store</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<header class="container logo">
+    <div class="col-lg-12 d-flex justify-content-center">
+        <a href="index.html"><img src="images/logo.png" alt="Logotipo" class="logotipo" title="Voltar ao Home"></a>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-12">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Cordas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Violão</a>
+                        <a class="dropdown-item" href="#">Guitarra</a>
+                        <a class="dropdown-item" href="#">Baixo</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Amplificadores</a>
+                        <a class="dropdown-item" href="#">Encordoamentos</a>
+                        <a class="dropdown-item" href="#">Efeitos</a>
+                        <a class="dropdown-item" href="#">Acessórios</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Percussão
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Sopro
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Teclas
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Áudio
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Acessórios
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2 pesquisa" type="search" placeholder="Pesquisa"
+                       aria-label="Search">
+                <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i> Buscar
+                </button>
+            </form>
+        </div>
+    </nav>
+</header>
+<main class="container">
+    <header class="row d-flex justify-content-center col-lg-12">
+        <h2 class="d-flex justify-content-center col-lg-12">Carrinho</h2>
+        <div class="col-lg-12">
+            <span class="d-flex justify-content-center col-lg-12 local" style="float: left">Produtos > Local de Entrega >&nbsp;<em
+                    class="enfatizacao">Método de Pagamento</em></span>
+        </div>
+        <div class="col-lg-12">
+            <h4 class="d-flex justify-content-center col-lg-12">Confirme o local de entrega</h4>
+        </div>
+    </header>
+    <section>
+        <h2 class="row col-lg-12 col-lg-12">Local de Entrega</h2>
+        <hr>
+        <div class="confirmacaoEnd">
+            <h4 class="hEnd">Endereço</h4>
+            <p class="hEnd" id="pEnd">Rua Abc</p>
+            <h4 class="hEnd">Número</h4>
+            <p class="hEnd" id="pNumero">123</p>
+            <h4 class="hEnd">CEP</h4>
+            <p class="hEnd" id="pCEP">01234567</p>
+            <h4 class="hEnd">Complemento</h4>
+            <p class="hEnd" id="pComplemento">Apt 47</p>
+            <h4 class="hEnd">Bairro</h4>
+            <p class="hEnd" id="pBairro">Centro</p>
+            <h4 class="hEnd">Cidade</h4>
+            <p class="hEnd" id="pCidade">São Paulo</p>
+            <!--<button class="btn btn-outline-primary btAlterar" type="submit"-->
+                    <!--onclick="document.getElementById('alterarEnd').style.display='block'">Alterar-->
+            <!--</button>-->
+            <button type="button" class="btn btn-outline-danger btAlterar" data-toggle="modal" data-target="#exampleModalCenter">
+                Alterar
+            </button>
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+                 aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Alterar Endereço</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group col-md-3">
+                                <label for="cep">CEP</label>
+                                <input name="cep" type="text" class="form-control" id="cep" placeholder="CEP" size="10"
+                                       maxlength="9" onblur="pesquisacep(this.value);">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="rua">Rua</label>
+                                <input name="rua" type="text" class="form-control" id="rua" placeholder="Rua" size="60">
+                            </div>
+                            <div class="form-group col-md-1">
+                                <label for="numero">Número</label>
+                                <input name="numero" type="text" class="form-control" id="numero" placeholder="Nº"
+                                       size="10">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="complemento">Complemento</label>
+                                <input name="complemento" type="text" class="form-control" id="complemento"
+                                       placeholder="Complemento" size="40">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="bairro">Bairro</label>
+                                <input name="bairro" type="text" class="form-control" id="bairro" placeholder="Bairro"
+                                       size="40">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="cidade">Cidade</label>
+                                <input name="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade"
+                                       size="40">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="uf">Estado</label>
+                                <input name="uf" type="text" class="form-control" id="uf" placeholder="Estado" size="2">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label style="display: none;">IBGE:</label>
+                                <input name="ibge" type="text" id="ibge" size="8" style="display: none;">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary" onclick="alterarEnd()" data-dismiss="modal">Alterar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--<div id="alterarEnd" class="modal col-lg-12"><span-->
+                    <!--onclick="document.getElementById('alterarEnd').style.display='none'"-->
+                    <!--class="close" title="Close Modal">&times;</span>-->
+
+                <!--<form class="modal-content animate" action="#">-->
+                    <!--<div class="container col-lg-4 form-row">-->
+                        <!--<h1>Alterar Endereço</h1>-->
+                        <!--<div class="form-group col-md-3">-->
+                            <!--<label for="cep">CEP</label>-->
+                            <!--<input name="cep" type="text" class="form-control" id="cep" placeholder="CEP" size="10"-->
+                                   <!--maxlength="9" onblur="pesquisacep(this.value);">-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-4">-->
+                            <!--<label for="rua">Rua</label>-->
+                            <!--<input name="rua" type="text" class="form-control" id="rua" placeholder="Rua" size="60">-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-1">-->
+                            <!--<label for="numero">Número</label>-->
+                            <!--<input name="numero" type="text" class="form-control" id="numero" placeholder="Nº"-->
+                                   <!--size="10">-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-4">-->
+                            <!--<label for="complemento">Complemento</label>-->
+                            <!--<input name="complemento" type="text" class="form-control" id="complemento"-->
+                                   <!--placeholder="Complemento" size="40">-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-4">-->
+                            <!--<label for="bairro">Bairro</label>-->
+                            <!--<input name="bairro" type="text" class="form-control" id="bairro" placeholder="Bairro"-->
+                                   <!--size="40">-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-4">-->
+                            <!--<label for="cidade">Cidade</label>-->
+                            <!--<input name="cidade" type="text" class="form-control" id="cidade" placeholder="Cidade"-->
+                                   <!--size="40">-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-4">-->
+                            <!--<label for="uf">Estado</label>-->
+                            <!--<input name="uf" type="text" class="form-control" id="uf" placeholder="Estado" size="2">-->
+                        <!--</div>-->
+                        <!--<div class="form-group col-md-4">-->
+                            <!--<label style="display: none;">IBGE:</label>-->
+                            <!--<input name="ibge" type="text" id="ibge" size="8" style="display: none;">-->
+                        <!--</div>-->
+
+                        <!--<button type="button" onclick="document.getElementById('alterarEnd').style.display='none'"-->
+                                <!--class="cancelbtn btn btn-primary" style="float: left;">Cancelar-->
+                        <!--</button>-->
+                        <!--<br>-->
+                        <!--<button type="button" class="btn btn-primary" id="troca" onclick="alterarEnd()">Alterar</button>-->
+
+                    <!--</div>-->
+
+                <!--</form>-->
+            <!--</div>-->
+        </div>
+        <button class="btn btn-outline-primary bInfo bVoltar" type="submit" onclick="voltar()">Voltar</button>
+
+        <button class="btn btn-outline-primary bInfo" type="submit"
+                onclick="window.location.href='carrinho_metodo_pagamento.html'">Confirmar
+        </button>
+    </section>
+</main>
+
+<footer class="container col-lg-12">
+    <hr class="hr col-lg-10">
+    <p class="d-flex justify-content-center">Copyright&copy; Music Club, Inc. - Todos Direitos Reservados 2018 &emsp;<a
+            href="politica_privacidade.html">Política de Privacidade</a>&ensp;|&ensp;
+        <a href="#">Sobre Nós</a>&nbsp;|&nbsp;<a href="fale_conosco.html">Fale Conosco</a>&nbsp;|&nbsp; <a
+                href="http://www.planalto.gov.br/ccivil_03/Leis/L8078.htm">Direito do Consumidor</a></p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

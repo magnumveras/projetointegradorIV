@@ -1,0 +1,264 @@
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.w-100 {
+    max-height: 400px;
+}
+
+.hr {
+    border-width: 2px;
+}
+
+.titulo {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.card {
+    padding: 5px;
+}
+
+.pagination {
+    margin-top: 10px;
+}
+
+.card-img-top {
+    max-height: 14em;
+    max-width: 7em;
+    text-align: center;
+}
+
+.btn-header {
+    width: 130px;
+    margin-top: 15px;
+    /*margin-left: 25%;*/
+}
+
+.pesquisa {
+    width: 400px;
+}
+
+.novoUsu {
+    margin-left: 4%;
+}
+
+.lista {
+    display: inline;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.img-zoom-container {
+    position: relative;
+}
+
+.img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    /*set the size of the lens:*/
+    width: 40px;
+    height: 40px;
+}
+
+.img-zoom-result {
+    border: 1px solid #d4d4d4;
+    /*set the size of the result div:*/
+    width: 300px;
+    height: 300px;
+}
+
+.img-zoom-result {
+    visibility: hidden;
+    position: fixed;
+    margin-top: -25%;
+    margin-left: 25%;
+}
+
+.img-zoom-container:hover > .img-zoom-result {
+    visibility: visible;
+}
+
+/*!*Fale conosco*!*/
+/*!* Style inputs with type="text", select elements and textareas *!*/
+
+input[type=password], input[type=date], input[type=text], input[type=email], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+select {
+    width: 10px;
+}
+
+/*!* When moving the mouse over the submit button, add a darker green color *!*/
+/*input[type=submit]:hover {*/
+    /*background-color: #45a049;*/
+/*}*/
+
+/*!* Add a background color and some padding around the form *!*/
+/*.container {*/
+    /*border-radius: 5px;*/
+    /*background-color: #f2f2f2;*/
+    /*padding: 20px;*/
+/*}*/
+
+/*!*Login*!*/
+/*!* The Modal (background) *!*/
+/*.modal {*/
+    /*display: none; !* Hidden by default *!*/
+    /*position: fixed; !* Stay in place *!*/
+    /*z-index: 1; !* Sit on top *!*/
+    /*left: 0;*/
+    /*top: 0;*/
+    /*width: 100%; !* Full width *!*/
+    /*height: 100%; !* Full height *!*/
+    /*overflow: auto; !* Enable scroll if needed *!*/
+    /*background-color: rgb(0, 0, 0); !* Fallback color *!*/
+    /*background-color: rgba(0, 0, 0, 0.4); !* Black w/ opacity *!*/
+    /*padding-top: 60px;*/
+/*}*/
+
+/*!* Modal Content/Box *!*/
+/*.modal-content {*/
+    /*background-color: #fefefe;*/
+    /*margin: 5px auto; !* 15% from the top and centered *!*/
+    /*border: 1px solid #888;*/
+    /*width: 80%; !* Could be more or less, depending on screen size *!*/
+/*}*/
+
+/*!* The Close Button *!*/
+/*.close {*/
+    /*!* Position it in the top right corner outside of the modal *!*/
+    /*position: absolute;*/
+    /*right: 25px;*/
+    /*top: 0;*/
+    /*color: #000;*/
+    /*font-size: 35px;*/
+    /*font-weight: bold;*/
+/*}*/
+
+/*!* Close button on hover *!*/
+/*.close:hover,*/
+/*.close:focus {*/
+    /*color: red;*/
+    /*cursor: pointer;*/
+/*}*/
+
+/*!* Add Zoom Animation *!*/
+/*.animate {*/
+    /*-webkit-animation: animatezoom 0.6s;*/
+    /*animation: animatezoom 0.6s*/
+/*}*/
+
+/*@-webkit-keyframes animatezoom {*/
+    /*from {*/
+        /*-webkit-transform: scale(0)*/
+    /*}*/
+    /*to {*/
+        /*-webkit-transform: scale(1)*/
+    /*}*/
+/*}*/
+
+/*@keyframes animatezoom {*/
+    /*from {*/
+        /*transform: scale(0)*/
+    /*}*/
+    /*to {*/
+        /*transform: scale(1)*/
+    /*}*/
+/*}*/
+
+@media (max-width: 700px) {
+    #carouselExampleIndicators {
+        display: none;
+    }
+}
+
+#assunto {
+    margin-bottom: 15px;
+    margin-top: 7px;
+}
+
+.cartaoCredito {
+    border-style: solid;
+    border-width: 0.5px;
+}
+
+.metpag {
+    border-style: solid;
+    border-width: 1px;
+}
+
+/*.ctCredito {*/
+    /*display: none;*/
+/*}*/
+
+.info {
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 17px;
+}
+
+.bInfo {
+    margin-bottom: 10px;
+    margin-left: 70%;
+}
+
+.bVoltar {
+    float: left;
+}
+
+.confirmacaoEnd {
+    border-style: solid;
+    border-width: 1px;
+}
+
+.hEnd {
+    margin-left: 20px;
+}
+
+.btAlterar {
+    margin-left: 92%;
+    margin-bottom: 17px;
+    display: inline-block;
+}
+
+.comp {
+    display: inline-block;
+    float: left;
+}
+
+.logo {
+    /*background-color: #d4d4d4;*/
+}
+
+.enfatizacao {
+    color: #99a1a1;
+}
+
+.local {
+    font-size: 23px;
+}
+
+#cep, #rua, #numero, #complemento, #cidade, #uf, #bairro {
+    width: 430px;
+}

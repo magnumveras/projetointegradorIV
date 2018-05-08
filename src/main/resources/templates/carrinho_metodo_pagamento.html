@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagamento | Music Store</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<header class="container">
+    <section class="row">
+        <h2 style="display: none">Validação w3</h2>
+        <div class="col-lg-12 d-flex justify-content-center">
+            <a href="index.html"><img src="images/logo.png" alt="Logotipo" class="logotipo" title="Voltar ao Home"></a>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-12">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cordas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Violão</a>
+                            <a class="dropdown-item" href="#">Guitarra</a>
+                            <a class="dropdown-item" href="#">Baixo</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Amplificadores</a>
+                            <a class="dropdown-item" href="#">Encordoamentos</a>
+                            <a class="dropdown-item" href="#">Efeitos</a>
+                            <a class="dropdown-item" href="#">Acessórios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Percussão
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sopro
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Teclas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Áudio
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Acessórios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 pesquisa" type="search" placeholder="Pesquisa"
+                           aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i> Buscar
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </section>
+</header>
+
+<main class="container">
+    <header class="row d-flex justify-content-center col-lg-12">
+        <h2 class="d-flex justify-content-center col-lg-12">Carrinho</h2>
+        <div class="col-lg-12">
+            <span class="d-flex justify-content-center col-lg-12 local" style="float: left">Produtos > Local de Entrega > Método de Pagamento</span>
+        </div>
+        <div class="col-lg-12">
+            <h4 class="d-flex justify-content-center col-lg-12">Escolha o método de pagamento</h4>
+        </div>
+        <section class="metpag row col-lg-12">
+            <h2 class="col-lg-12">Método de Pagamento</h2>
+            <div>
+                <form class="col-lg-12" action="#">
+                    <div class="cartaoCredito col-lg-12">
+                        <input type="radio" name="pagamento" value="credito" onmousemove="aparecer()">Cartão de
+                        Crédito<br>
+                        <div class="ctCredito">
+                            <hr>
+                            <label for="inputNumCartao">Número do Cartão</label>
+                            <input type="text" class="form-control" id="inputNumCartao">
+                            <label for="inputTitular">Nome do Titular</label>
+                            <input type="text" class="form-control" id="inputTitular">
+                            <label for="inputValidade">Validade</label>
+                            <input type="text" class="form-control" id="inputValidade">
+                            <label for="inputSeguranca">Código de Segurança</label>
+                            <input type="text" class="form-control" id="inputSeguranca">
+                        </div>
+                    </div>
+                    <div>
+                        <input type="radio" name="pagamento" value="paypal">PayPal<br>
+                    </div>
+                    <div>
+                        <input type="radio" name="pagamento" value="boleto">Boleto Bancário<br>
+                    </div>
+
+                </form>
+            </div>
+
+            <div class=" info col-lg-12">
+                <h2>Informações da Compra</h2>
+                <p>Valor dos Produtos R$</p>
+                <p>Valor do Frete R$</p>
+                <p>Total da Compra R$</p>
+                <p>Local de Entrega</p>
+                <p>Método de Pagamento</p>
+                <button class="btn btn-outline-primary bInfo bVoltar" type="submit" onclick="voltar()">Voltar</button>
+                <button class="btn btn-outline-primary bInfo" type="submit">Finalizar Compra</button>
+            </div>
+        </section>
+
+    </header>
+</main>
+
+<footer class="container col-lg-12">
+    <hr class="hr col-lg-10">
+    <p class="d-flex justify-content-center">Copyright&copy; Music Club, Inc. - Todos Direitos Reservados 2018 &emsp;<a
+            href="politica_privacidade.html">Política de Privacidade</a>&ensp;|&ensp;
+        <a href="#">Sobre Nós</a>&nbsp;|&nbsp;<a href="fale_conosco.html">Fale Conosco</a>&nbsp;|&nbsp; <a
+                href="http://www.planalto.gov.br/ccivil_03/Leis/L8078.htm">Direito do Consumidor</a></p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

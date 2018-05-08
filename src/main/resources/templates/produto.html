@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Violão | Music Store</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body onload="typeWriter()">
+<header class="container">
+    <section class="row">
+        <h2 style="display: none">Validação w3</h2>
+        <div class="col-lg-8 d-flex justify-content-center">
+            <a href="index.html"><img src="images/logo.png" alt="Logotipo" class="logotipo"></a>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-outline-secondary btn-header">Logar</button>
+        </div>
+        <div class="col-lg-2">
+            <button type="button" class="btn btn-outline-secondary btn-header"><i class="fas fa-shopping-cart"></i>
+                Carrinho
+            </button>
+        </div>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light col-lg-12">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cordas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Violão</a>
+                            <a class="dropdown-item" href="#">Guitarra</a>
+                            <a class="dropdown-item" href="#">Baixo</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Amplificadores</a>
+                            <a class="dropdown-item" href="#">Encordoamentos</a>
+                            <a class="dropdown-item" href="#">Efeitos</a>
+                            <a class="dropdown-item" href="#">Acessórios</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Percussão
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Sopro
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Teclas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Áudio
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Acessórios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2 pesquisa" type="search" placeholder="Pesquisa"
+                           aria-label="Search">
+                    <button class="btn btn-outline-secondary" type="submit"><i class="fas fa-search"></i> Buscar
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </section>
+</header>
+
+<main class="container">
+    <nav aria-label="breadcrumb">
+        <ol>
+            <li class="lista"><a href="index.html">Home</a> ></li>
+            <li class="lista"><a href="#">Cordas</a> ></li>
+            <li class="lista"><a href="#">Violão</a> ></li>
+            <li class="lista"><a href="#">Aço</a> ></li>
+            <li class="lista active" aria-current="page">Martin-0</li>
+        </ol>
+    </nav>
+    <section class="row">
+        <div class="col-lg-1">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top i2" src="../static/Images/martin-2.jpg" alt="Fundo Violão"
+                     onclick="document.querySelector('#myimage').src='../static/Images/martin-2.jpg'">
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top i1" src="../static/Images/martin-1.jpg" alt="Detalher Inlay Freetboard"
+                     onclick="document.querySelector('#myimage').src='../static/Images/martin-1.jpg'">
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top i3" src="../static/Images/martin-3.jpg" alt="Head"
+                     onclick="document.querySelector('#myimage').src='../static/Images/martin-3.jpg'">
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top i4" src="../static/Images/martin-4.jpg" alt="Detalhe tarraxa"
+                     onclick="document.querySelector('#myimage').src='../static/Images/martin-4.jpg'">
+            </div>
+        </div>
+        <div class="col-lg-5 img-zoom-container">
+            <img id="myimage" src="../static/Images/martin-0.jpg" alt="Violão Martin D-100 Deluxe">
+            <div id="myresult" class="img-zoom-result"></div>
+        </div>
+
+        <div class="col-lg-6">
+            <h1>Martin D-100 Deluxe</h1>
+            <label>R$ 373.746,75</label><br>
+            <label><i class="fas fa-tag"></i> 5% de desconto à vista no boleto</label>
+            <section>
+                <h2>Frete</h2>
+                <input type="number" placeholder="CEP">
+                <button type="button" class="btn btn-light">Calcular Frete</button>
+            </section>
+            <label>Cor</label>
+            <form action="#">
+                <input type="radio" name="cor" value="natural" checked> Natural<br>
+            </form>
+            <a href="#" class="btn btn-primary"><i
+                    class="fas fa-shopping-cart"></i>&ensp;Adicionar ao Carrinho</a>
+            <a href="#" class="btn btn-primary">Comprar</a>
+        </div>
+    </section>
+    <div class="col-lg-6">
+        <hr>
+    </div>
+    <section class="row col-lg-6 d-flex justify-content-center">
+        <h2 style="display: none">Validação w3</h2>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
+                   aria-controls="pills-home" aria-selected="true">Descrição</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
+                   aria-controls="pills-profile" aria-selected="false">Especificações</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
+                   aria-controls="pills-contact" aria-selected="false">Vídeo</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <p id="demo"></p>
+                <!--<p>Para comemorar o marco de seu milionésimo violão, C.F. Martin & Co. criou uma edição espetacular-->
+                    <!--comemorativa.</p>-->
+                <!--<p>O D-100 Deluxe combina tons raros e elaborados inlays num exemplo deslumbrante da arte de criar-->
+                    <!--violões. Simplesmente, esta obra-prima é um dos modelos mais bonitos que Martin já ofereceu.</p>-->
+                <!--<p>Levou aproximadamente 6 mêses para a confecção de cada um dos violões criados. Foi uma edição-->
+                    <!--limitada com apenas 50 exemplares.</p>-->
+            </div>
+            <script>
+                var i = 0;
+                var txt = 'Para comemorar o marco de seu milionésimo violão, C.F. Martin & Co. criou uma edição espetacular ' +
+                    'comemorativa. O D-100 Deluxe combina tons raros e elaborados inlays num exemplo deslumbrante da arte de criar ' +
+                    'violões. Simplesmente, esta obra-prima é um dos modelos mais bonitos que Martin já ofereceu. ' +
+                    'Levou aproximadamente 6 mêses para a confecção de cada um dos violões criados. Foi uma edição ' +
+                    'limitada com apenas 50 exemplares.';
+                var speed = 45; /* The speed/duration of the effect in milliseconds */
+
+                function typeWriter() {
+                    if (i < txt.length) {
+                        document.getElementById("demo").innerHTML += txt.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, speed);
+                    }
+                }
+            </script>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <table class="table table-striped">
+                    <tbody>
+                    <tr>
+                        <th scope="row">Modelo:</th>
+                        <td>D-100 Deluxe</td>
+                        <th scope="row">Fingerboard:</th>
+                        <td>Ebony</td>
+                        <th scope="row">Inlay:</th>
+                        <td>Boxed Abalone Multi-Stripe</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Body Size:</th>
+                        <td>D-14 Fret</td>
+                        <th scope="row">Neck Material:</th>
+                        <td>Genuine Mahogany</td>
+                        <th scope="row">Números de Frets:</th>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Bridge Pin Material:</th>
+                        <td>Osso</td>
+                        <th scope="row">Bridge Pin Dots:</th>
+                        <td>Grenn Tourmaline</td>
+                        <th scope="row">Pickguard:</th>
+                        <td>Black Micarta</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Case:</th>
+                        <td>Ply Hardshell</td>
+                        <th scope="row">Pickguard Inlay:</th>
+                        <td>Custom Inlay</td>
+                        <th scope="row">Knob:</th>
+                        <td>Engraved Butterbean</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/1mgN0wXx_1k?start=5"
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+</main>
+<hr class="col-lg-10">
+<section class="container row col-lg-12 d-flex justify-content-center">
+    <h2>Produtos relacionados</h2>
+    <div class="card-deck">
+        <div class="card col-lg-3">
+            <a href="produto.html" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                              src="../static/Images/martin-d-100.jpg"
+                                                                              alt="Violão Martin D-100"></a>
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                    unidades vendidas</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                        class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+            </div>
+        </div>
+        <div class="card col-lg-3">
+            <a href="#" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                   src="../static/Images/martin-d-100.jpg"
+                                                                   alt="Violão Martin D-100"></a>
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                    unidades vendidas</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                        class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+            </div>
+        </div>
+        <div class="card col-lg-3">
+            <a href="#" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                   src="../static/Images/martin-d-100.jpg"
+                                                                   alt="Violão Martin D-100"></a>
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                    unidades vendidas</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                        class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+            </div>
+        </div>
+        <div class="card col-lg-3">
+            <a href="#" class="d-flex justify-content-center"><img class="card-img-top"
+                                                                   src="../static/Images/martin-d-100.jpg"
+                                                                   alt="Violão Martin D-100"></a>
+            <hr>
+            <div class="card-body">
+                <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
+                <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
+                    unidades vendidas</p>
+            </div>
+            <div class="card-footer">
+                <a href="#" class="btn btn-primary d-flex justify-content-center"><i
+                        class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="container col-lg-12">
+    <hr class="hr col-lg-10">
+    <p class="d-flex justify-content-center">Copyright&copy; Music Club, Inc. - Todos Direitos Reservados 2018 &emsp;<a
+            href="politica_privacidade.html">Política de Privacidade</a>&ensp;|&ensp;
+        <a href="#">Sobre Nós</a>&nbsp;|&nbsp;<a href="#">Fale Conosco</a>&nbsp;|&nbsp; <a
+                href="http://www.planalto.gov.br/ccivil_03/Leis/L8078.htm">Direito do Consumidor</a></p>
+</footer>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="script.js"></script>
+<script>
+    imageZoom("myimage", "myresult");
+</script>
+</body>
+</html>
