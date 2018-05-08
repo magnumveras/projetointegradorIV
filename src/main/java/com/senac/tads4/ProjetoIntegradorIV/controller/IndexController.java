@@ -15,6 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
  *
  * @author magno
  */
+
+/*Projeto adequado com Spring MVC */
 @Controller
 @RequestMapping("/musicstore")
 public class IndexController {
