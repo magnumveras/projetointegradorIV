@@ -1,121 +1,201 @@
+
 package com.senac.tads4.ProjetoIntegradorIV.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
-
+import java.util.Date;
+import java.util.Objects;
+import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 import javax.validation.constraints.Digits;
-
+import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "TB-PRODUTO")
-public class Produto {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "ID_PRODUTO")
-	private int id;
+@Table(name = "TB_PRODUTO")
+public class Produto implements Serializable {
 
-	@Column(name = "MARCA", length = 100, nullable = false)
-	private String marca;
+  @Id
+  @Column(name = "ID_PRODUTO")
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-	@Column(name = "MODELO", length = 100, nullable = false)
-	private String modelo;
+  @Size(min = 1, max = 100, message = "{produto.nome.erro}")
+  @Column(name = "NM_PRODUTO", length = 100, nullable = false)
+  private String nome;
 
-	@Column(name = "COR", length = 100, nullable = false)
-	private String cor;
+  @Size(min = 1, max = 1000)
+  @Column(name = "DS_PRODUTO", length = 1000)
+  private String descricao;
 
-	@Column(name = "CATEGORIA", length = 100, nullable = false)
-	private String categoria;
+  @Digits(integer = 6, fraction = 2)
+  @Column(name = "VL_COMPRA", precision = 6,
+          scale = 2, nullable = false)
+  private BigDecimal precoCompra;
 
-	@Column(name = "DESC", length = 1000)
-	private String descricao;
+  @Digits(integer = 6, fraction = 2)
+  @Column(name = "VL_VENDA", precision = 6,
+          scale = 2, nullable = false)
+  private BigDecimal precoVenda;
 
-	@Digits(integer = 6, fraction = 2)
-	@Column(name = "VL_COMPRA", precision = 6, scale = 2, nullable = false)
-	private BigDecimal vCompra;
-	
-	@Digits(integer = 6, fraction = 2)
-	@Column(name = "VL_VENDA", precision = 6, scale = 2, nullable = false)
-	private BigDecimal vVenda;
-	
-	@Column(name = "ESTOQUE", precision = 6, scale = 0, nullable = false)
-	private int estoque;
+  @Column(name = "QT_PRODUTO", precision = 6,
+          scale = 0, nullable = false)
+  private int quantidade;
 
-	public int getId() {
-		return id;
-	}
+  @Column(name = "DT_CADASTRO", nullable = false)
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date dtCadastro;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+  @ManyToMany(fetch = FetchType.LAZY)
+  @JoinTable(name = "TB_PRODUTO_CATEGORIA",
+          joinColumns = {
+            @JoinColumn(name = "ID_PRODUTO")
+          },
+          inverseJoinColumns = {
+            @JoinColumn(name = "ID_CATEGORIA")
+          })
+  private Set<Categoria> categorias;
 
-	public String getMarca() {
-		return marca;
-	}
+  @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY,
+          cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+  private Set<ImagemProduto> imagens;
 
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
+  @Transient
+  private Set<Integer> idsCategorias;
 
-	public String getModelo() {
-		return modelo;
-	}
+  @Transient
+  private String observacoes;
 
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
-	}
+  public Produto() {
 
-	public String getCor() {
-		return cor;
-	}
+  }
 
-	public void setCor(String cor) {
-		this.cor = cor;
-	}
+  public Produto(Long id, String nome, String descricao, BigDecimal precoCompra, BigDecimal precoVenda, int quantidade, Date dtCadastro) {
+    this.id = id;
+    this.nome = nome;
+    this.descricao = descricao;
+    this.precoCompra = precoCompra;
+    this.precoVenda = precoVenda;
+    this.quantidade = quantidade;
+    this.dtCadastro = dtCadastro;
+  }
 
-	public String getCategoria() {
-		return categoria;
-	}
+  public Produto(Long id, String nome, String descricao, BigDecimal precoCompra, BigDecimal precoVenda, int quantidade, Date dtCadastro, Set<ImagemProduto> imagens, Set<Categoria> categorias) {
+    this.id = id;
+    this.nome = nome;
+    this.descricao = descricao;
+    this.precoCompra = precoCompra;
+    this.precoVenda = precoVenda;
+    this.quantidade = quantidade;
+    this.dtCadastro = dtCadastro;
+    this.imagens = imagens;
+    this.categorias = categorias;
+  }
 
-	public void setCategoria(String categoria) {
-		this.categoria = categoria;
-	}
+  public Long getId() {
+    return id;
+  }
 
-	public String getDescricao() {
-		return descricao;
-	}
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
+  public String getNome() {
+    return nome;
+  }
 
+  public void setNome(String nome) {
+    this.nome = nome.trim();
+  }
 
-	public BigDecimal getvCompra() {
-		return vCompra;
-	}
+  public String getDescricao() {
+    return descricao;
+  }
 
-	public void setvCompra(BigDecimal vCompra) {
-		this.vCompra = vCompra;
-	}
+  public void setDescricao(String descricao) {
+    this.descricao = descricao;
+  }
 
-	public BigDecimal getvVenda() {
-		return vVenda;
-	}
+  public BigDecimal getPrecoCompra() {
+    return precoCompra;
+  }
 
-	public void setvVenda(BigDecimal vVenda) {
-		this.vVenda = vVenda;
-	}
+  public void setPrecoCompra(BigDecimal precoCompra) {
+    this.precoCompra = precoCompra;
+  }
 
-	public int getEstoque() {
-		return estoque;
-	}
+  public BigDecimal getPrecoVenda() {
+    return precoVenda;
+  }
 
-	public void setEstoque(int estoque) {
-		this.estoque = estoque;
-	}
+  public void setPrecoVenda(BigDecimal precoVenda) {
+    this.precoVenda = precoVenda;
+  }
+
+  public int getQuantidade() {
+    return quantidade;
+  }
+
+  public void setQuantidade(int quantidade) {
+    this.quantidade = quantidade;
+  }
+
+  public Date getDtCadastro() {
+    return dtCadastro;
+  }
+
+  public void setDtCadastro(Date dtCadastro) {
+    this.dtCadastro = dtCadastro;
+  }
+
+  public Set<Categoria> getCategorias() {
+    return categorias;
+  }
+
+  public void setCategorias(Set<Categoria> categorias) {
+    this.categorias = categorias;
+  }
+
+  public Set<ImagemProduto> getImagens() {
+    return imagens;
+  }
+
+  public void setImagens(Set<ImagemProduto> imagens) {
+    this.imagens = imagens;
+  }
+
+  public String getObservacoes() {
+    return observacoes;
+  }
+
+  public void setObservacoes(String observacoes) {
+    this.observacoes = observacoes;
+  }
+
+  public Set<Integer> getIdsCategorias() {
+    return idsCategorias;
+  }
+
+  public void setIdsCategorias(Set<Integer> idsCategorias) {
+    this.idsCategorias = idsCategorias;
+  }
+
+  @Override
+  public String toString() {
+    return "Produto{" + "id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", precoCompra=" + precoCompra + ", precoVenda=" + precoVenda + ", quantidade=" + quantidade + ", dtCadastro=" + dtCadastro + ", categorias=" + categorias + ", imagens=" + imagens + ", idsCategorias=" + idsCategorias + ", observacoes=" + observacoes + '}';
+  }
 
 }

@@ -39,6 +39,7 @@
 			<artifactId>spring-boot-devtools</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+                
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -50,6 +51,59 @@
 	  <version>1.0.0.Final</version>
 	  <type>jar</type>
 	 </dependency>
+	 
+         <dependency>
+	  <groupId>org.springframework.security</groupId>
+	  <artifactId>spring-security-core</artifactId>
+	  <version>5.0.3.RELEASE</version>
+	  <type>jar</type>
+	 </dependency>
+         
+	<!-- <dependency>
+	  <groupId>org.springframework.data</groupId>
+	  <artifactId>spring-data-redis</artifactId>
+	  <version>2.1.0.DATAREDIS-791-SNAPSHOT</version>
+	  <type>jar</type>
+	 </dependency>
+         -->
+         
+         <!--COMEÇO DE DEPENDENCIAS ADICIONADAS PELOS INTEGRANTES DO GRUPO  -->
+         <dependency>
+      <groupId>nz.net.ultraq.thymeleaf</groupId>
+      <artifactId>thymeleaf-layout-dialect</artifactId>
+    </dependency>
+
+        
+        
+        <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+         
+     <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-properties-migrator</artifactId>
+      <scope>runtime</scope>
+    </dependency>    
+         
+         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-data-jpa</artifactId>
+    
+         </dependency>
+
+
+         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+         <dependency>
+             <groupId>mysql</groupId>
+             <artifactId>mysql-connector-java</artifactId>
+    
+         </dependency>
+
+         
+         <!--FINAL DE DEPENDENCIAS ADICIONADAS PELOS INTEGRANTES DO GRUPO  --> 
+         
 	</dependencies>
 
 	<build>
