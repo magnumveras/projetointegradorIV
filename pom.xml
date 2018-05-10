@@ -51,13 +51,6 @@
 	  <version>1.0.0.Final</version>
 	  <type>jar</type>
 	 </dependency>
-	 
-         <dependency>
-	  <groupId>org.springframework.security</groupId>
-	  <artifactId>spring-security-core</artifactId>
-	  <version>5.0.3.RELEASE</version>
-	  <type>jar</type>
-	 </dependency>
          
 	<!-- <dependency>
 	  <groupId>org.springframework.data</groupId>
@@ -68,32 +61,35 @@
          -->
          
          <!--COMEÇO DE DEPENDENCIAS ADICIONADAS PELOS INTEGRANTES DO GRUPO  -->
-         <dependency>
-      <groupId>nz.net.ultraq.thymeleaf</groupId>
-      <artifactId>thymeleaf-layout-dialect</artifactId>
-    </dependency>
+     <!--FOI-->    <dependency>
+             <groupId>nz.net.ultraq.thymeleaf</groupId>
+             <artifactId>thymeleaf-layout-dialect</artifactId>
+         </dependency>
 
         
         
-        <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>
+         <!--         
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-security</artifactId>
+         </dependency>
+         -->
          
-     <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-properties-migrator</artifactId>
-      <scope>runtime</scope>
-    </dependency>    
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-properties-migrator</artifactId>
+             <scope>runtime</scope>
+         </dependency>    
+        
          
-         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa -->
+     <!--        
+          https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-jpa 
          <dependency>
              <groupId>org.springframework.boot</groupId>
              <artifactId>spring-boot-starter-data-jpa</artifactId>
     
          </dependency>
-
-
+-->
          <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
          <dependency>
              <groupId>mysql</groupId>
@@ -102,8 +98,13 @@
          </dependency>
 
          
-         <!--FINAL DE DEPENDENCIAS ADICIONADAS PELOS INTEGRANTES DO GRUPO  --> 
-         
+         <!--FINAL DE DEPENDENCIAS ADICIONADAS PELOS INTEGRANTES DO GRUPO  -->
+	 <dependency>
+	  <groupId>org.springframework.security</groupId>
+	  <artifactId>spring-security-core</artifactId>
+	  <version>5.0.4.RELEASE</version>
+	  <type>jar</type>
+	 </dependency>
 	</dependencies>
 
 	<build>

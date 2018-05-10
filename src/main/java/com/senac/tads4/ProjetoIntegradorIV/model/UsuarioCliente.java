@@ -5,7 +5,7 @@
  */
 package com.senac.tads4.ProjetoIntegradorIV.model;
 
-import com.senac.tads4.ProjetoIntegradorIV.model.UsuarioCliente;
+
 import java.util.Collection;
 import java.util.Set;
 import org.springframework.security.core.GrantedAuthority;
