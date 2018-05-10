@@ -10,54 +10,92 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 /**
  *
- * @author Pedro Lucas
+ * @author fernando.tsuda
  */
-public class UsuarioSistema implements UserDetails{
-    
-    private String userName;
-    private String nomeCompleto;
-    private String senha;
-    
-   private Set<Papel> papeis; 
+public class UsuarioSistema implements UserDetails {
+  
+  private String username;
+  
+  private String nomeCompleto;
+  
+  private String senha;
+  
+  private Set<Papel> papeis;
+
+  public UsuarioSistema() {
+  }
+
+  public UsuarioSistema(String username, String nomeCompleto, String senha, Set<Papel> papeis) {
+    this.username = username;
+    this.nomeCompleto = nomeCompleto;
+    this.senha = senha;
+    this.papeis = papeis;
+  }
+  
+  
+
   @Override
-    public Set<Papel> /*Collection<? extends GrantedAuthority>*/ getAuthorities() {
-        
-        return papeis;
-        }
+  public String getUsername() {
+    return username;
+  }
 
-    @Override
-    public String getPassword() {
-       //retornar a senha digitada pelo usuario
-    return this.senha;
-       
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    @Override
-    public String getUsername() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  public String getNomeCompleto() {
+    return nomeCompleto;
+  }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  public void setNomeCompleto(String nomeCompleto) {
+    this.nomeCompleto = nomeCompleto;
+  }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        //mostra se esta trancado
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  public String getSenha() {
+    return senha;
+  }
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        //metodo usado para saber se é uma conta valida, ex na regra de negocio o usuario deve ter acesso nos ultimo 30 dias
-        return true;
-        }
+  public Set<Papel> getPapeis() {
+    return papeis;
+  }
 
-    @Override
-    public boolean isEnabled() {
-        //metodos que mostra se esta ativo ou não
-        return true;
-    }
-      
+  public void setPapeis(Set<Papel> papeis) {
+    this.papeis = papeis;
+  }
+
+  public void setSenha(String senha) {
+    this.senha = senha;
+  }
+
+  @Override
+  //public Collection<? extends GrantedAuthority> getAuthorities() {
+  public Set<Papel> getAuthorities() {
+    return papeis;
+  }
+
+  @Override
+  public String getPassword() {
+    return senha;
+  }
+
+  @Override
+  public boolean isAccountNonExpired() {
+    return true;
+  }
+
+  @Override
+  public boolean isAccountNonLocked() {
+    return true;
+  }
+
+  @Override
+  public boolean isCredentialsNonExpired() {
+    return true;
+  }
+
+  @Override
+  public boolean isEnabled() {
+   return true;
+  }
+  
 }
