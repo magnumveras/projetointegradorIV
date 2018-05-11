@@ -18,12 +18,12 @@ import javax.validation.constraints.Size;
 public class Perfil implements Serializable{
     
     @Id
-    @Column(name = "codigo")
+    @Column(name = "codigo", nullable=false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
     
     @Size(min = 1, max = 30)
-    @Column(name = "perfil", length = 30)
+    @Column(name = "perfil", length = 30, nullable=false)
     private String nome;
     
     public Perfil(){

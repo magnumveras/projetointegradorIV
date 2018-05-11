@@ -16,7 +16,7 @@ CREATE TABLE Perfil (
     CONSTRAINT primary_key PRIMARY KEY (codigo)
 );
 
-CREATE TABLE Usuarios (
+CREATE TABLE Usuario (
     codigo INTEGER NOT NULL AUTO_INCREMENT, 
     nome VARCHAR(30) NOT NULL,
     login VARCHAR(20) NOT NULL UNIQUE,
@@ -26,7 +26,7 @@ CREATE TABLE Usuarios (
     CONSTRAINT foreign_keyUsu FOREIGN KEY (codigoperfil) REFERENCES Perfil(codigo)
 );
 
-CREATE TABLE Clientes (
+CREATE TABLE Cliente (
     id INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(30) NOT NULL,
     sobrenome VARCHAR(70) NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE Clientes (
     cep VARCHAR(9) NOT NULL,
     codigousuario INTEGER NOT NULL,
     CONSTRAINT primary_keycli PRIMARY KEY (id),
-    CONSTRAINT foreign_keycli FOREIGN KEY (codigousuario) REFERENCES Usuarios(codigo)
+    CONSTRAINT foreign_keycli FOREIGN KEY (codigousuario) REFERENCES Usuario(codigo)
 );
 
 CREATE TABLE Carrinho (
@@ -54,7 +54,7 @@ CREATE TABLE Carrinho (
     datacarrinho TIMESTAMP NOT NULL,
     valortotal DECIMAL(8,2) NOT NULL,
     CONSTRAINT primary_keycar PRIMARY KEY (codigo),
-    CONSTRAINT foreign_keycar FOREIGN KEY (codigocliente) REFERENCES Clientes(id)
+    CONSTRAINT foreign_keycar FOREIGN KEY (codigocliente) REFERENCES Cliente(id)
 );
 
 CREATE TABLE Fornecedor (
@@ -82,7 +82,7 @@ CREATE TABLE Imagem(
     CONSTRAINT primary_keyimg PRIMARY KEY (codigo)
 );
 
-CREATE TABLE Produtos (
+CREATE TABLE Produto (
     codigo INTEGER NOT NULL AUTO_INCREMENT,
     nome VARCHAR(70) NOT NULL,
     descricao VARCHAR(200) NOT NULL,
@@ -128,7 +128,7 @@ CREATE TABLE Pedido(
     codigoendereco INTEGER NOT NULL,
     codigovenda INTEGER,
     CONSTRAINT primary_keyven PRIMARY KEY (codigo),
-    CONSTRAINT foreign_keyvencli FOREIGN KEY (codigocliente) REFERENCES Clientes(id),
+    CONSTRAINT foreign_keyvencli FOREIGN KEY (codigocliente) REFERENCES Cliente(id),
     CONSTRAINT foreign_keycodpag FOREIGN KEY (codigopagamento) REFERENCES Forma_Pagamento(codigo),
     CONSTRAINT foreign_keycodend FOREIGN KEY (codigoendereco) REFERENCES Endereco_Entrega(codigo)
 );
@@ -142,7 +142,7 @@ CREATE TABLE Venda(
     codigoendereco INTEGER NOT NULL,
     codigopedido INTEGER NOT NULL,
     CONSTRAINT primary_keyven PRIMARY KEY (codigo),
-    CONSTRAINT foreign_keyvencli FOREIGN KEY (codigocliente) REFERENCES Clientes(id),
+    CONSTRAINT foreign_keyvencli FOREIGN KEY (codigocliente) REFERENCES Cliente(id),
     CONSTRAINT foreign_keycodend FOREIGN KEY (codigoendereco) REFERENCES Endereco_Entrega(codigo),
     CONSTRAINT foreign_keycodpag FOREIGN KEY (codigopagamento) REFERENCES Forma_Pagamento(codigo),
     CONSTRAINT foreign_keycodped FOREIGN KEY (codigopedido) REFERENCES Pedido(codigo)
@@ -156,7 +156,7 @@ CREATE TABLE ItemPedido(
     quantidade INTEGER NOT NULL,
     CONSTRAINT primary_keyitem PRIMARY KEY (codigo),
     CONSTRAINT foreign_keyitemcod FOREIGN KEY (codigopedido) REFERENCES Pedido(codigo),
-    CONSTRAINT foreign_keyitempro FOREIGN KEY (codigoproduto) REFERENCES Produtos(codigo)
+    CONSTRAINT foreign_keyitempro FOREIGN KEY (codigoproduto) REFERENCES Produto(codigo)
 );
 
 CREATE TABLE Itemvenda (
@@ -166,7 +166,7 @@ CREATE TABLE Itemvenda (
     quantidade INTEGER NOT NULL,
     CONSTRAINT primary_keyitem PRIMARY KEY (codigo),
     CONSTRAINT foreign_keyitemcod FOREIGN KEY (codigovenda) REFERENCES Venda(codigo),
-    CONSTRAINT foreign_keyitempro FOREIGN KEY (codigoproduto) REFERENCES Produtos(codigo)
+    CONSTRAINT foreign_keyitempro FOREIGN KEY (codigoproduto) REFERENCES Produto(codigo)
 );
 
 CREATE TABLE Itemcarrinho(
@@ -176,5 +176,5 @@ CREATE TABLE Itemcarrinho(
     quantidade INTEGER NOT NULL,
     CONSTRAINT primary_keyitemcar PRIMARY KEY (codigo),
     CONSTRAINT foreign_keyitemcar FOREIGN KEY (codigocarrinho) REFERENCES Carrinho(codigo),
-    CONSTRAINT foreign_keyitemcarpro FOREIGN KEY (codigoproduto) REFERENCES Produtos(codigo)
+    CONSTRAINT foreign_keyitemcarpro FOREIGN KEY (codigoproduto) REFERENCES Produto(codigo)
 );
