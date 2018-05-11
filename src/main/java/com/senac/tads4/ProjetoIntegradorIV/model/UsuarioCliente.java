@@ -31,11 +31,11 @@ public class UsuarioCliente{
     private String cidade;
     private String estado;
     private int id;
-    private boolean enable;
+    private int ofertasEmail;
     private String rg;
     private String cpf;
  
-    public UsuarioCliente(String nome, String telefone, String nascimento, String usuario, String senha, String email, int cep, String rua, int Numero, String complemento, String bairro, String cidade, String estado, int id, boolean enable, String rg, String cpf) {
+    public UsuarioCliente(String nome, String telefone, String nascimento, String usuario, String senha, String email, int cep, String rua, int Numero, String complemento, String bairro, String cidade, String estado, int id,int ofertasEmail, String rg, String cpf) {
         this.nome = nome;
         this.telefone = telefone;
         this.nascimento = nascimento;
@@ -50,7 +50,7 @@ public class UsuarioCliente{
         this.cidade = cidade;
         this.estado = estado;
         this.id = id;
-        this.enable = enable;
+        this.ofertasEmail = ofertasEmail;
         this.rg = rg;
         this.cpf = cpf;
     }
@@ -167,12 +167,12 @@ public class UsuarioCliente{
         this.id = id;
     }
 
-    public boolean isEnable() {
-        return enable;
+    public int isEnable() {
+        return ofertasEmail;
     }
 
-    public void setEnable(boolean enable) {
-        this.enable = enable;
+    public void setEnable(int ofertasEmail) {
+        this.ofertasEmail = ofertasEmail;
     }
 
     public String getRg() {
