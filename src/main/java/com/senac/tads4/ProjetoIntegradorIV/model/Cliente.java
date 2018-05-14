@@ -283,13 +283,13 @@ public class Cliente implements Serializable{
         this.rua = rua;
     }
     
-    public String getRua() {
+    /*public String getRua() {
         return rua;
     }
 
     public void setRua(String rua) {
         this.rua = rua;
-    }
+    }*/
     
     
     
