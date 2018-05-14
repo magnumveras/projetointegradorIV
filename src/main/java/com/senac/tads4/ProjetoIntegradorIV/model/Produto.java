@@ -89,7 +89,7 @@ public class Produto implements Serializable {
           inverseJoinColumns = {
             @JoinColumn(name = "ID_CATEGORIA")
           })
-  private Set<Categoria> categorias;
+  private Set<CategoriaOLD> categorias;
 
   @OneToMany(mappedBy = "produto", fetch = FetchType.LAZY,
           cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -115,7 +115,7 @@ public class Produto implements Serializable {
     this.dtCadastro = dtCadastro;
   }
 
-  public Produto(Long id, String nome, String descricao, BigDecimal precoCompra, BigDecimal precoVenda, int quantidade, Date dtCadastro, Set<ImagemProduto> imagens, Set<Categoria> categorias) {
+  public Produto(Long id, String nome, String descricao, BigDecimal precoCompra, BigDecimal precoVenda, int quantidade, Date dtCadastro, Set<ImagemProduto> imagens, Set<CategoriaOLD> categorias) {
     this.id = id;
     this.nome = nome;
     this.descricao = descricao;
@@ -183,11 +183,11 @@ public class Produto implements Serializable {
     this.dtCadastro = dtCadastro;
   }
 
-  public Set<Categoria> getCategorias() {
+  public Set<CategoriaOLD> getCategorias() {
     return categorias;
   }
 
-  public void setCategorias(Set<Categoria> categorias) {
+  public void setCategorias(Set<CategoriaOLD> categorias) {
     this.categorias = categorias;
   }
 
