@@ -251,11 +251,8 @@ public class Cliente implements Serializable{
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
     }
-
-    @Override
-    public String toString() {
-        return "Cliente{" + "codigo=" + codigo + ", nome=" + nome + ", sobrenome=" + sobrenome + ", sexo=" + sexo + ", cpf=" + cpf + ", rg=" + rg + ", datanasc=" + datanasc + ", telefone=" + telefone + ", email=" + email + ", endereco=" + endereco + ", numero=" + numero + ", bairro=" + bairro + ", complemento=" + complemento + ", cidade=" + cidade + ", estado=" + estado + ", cep=" + cep + ", usuario=" + usuario + '}';
-    }
+    
+    
     
     
     
