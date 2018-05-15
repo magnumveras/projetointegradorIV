@@ -30,11 +30,7 @@ public class IndexController {
   public ModelAndView cadastroproduto() {
     return new ModelAndView("cadastro_produto");
   }
-  
-  @GetMapping("/cadastrousuario")
-  public ModelAndView cadastrousuario() {
-    return new ModelAndView("cadastro_usuario");
-  }
+   
   
   @GetMapping("/faleconosco")
   public ModelAndView faleconosco() {

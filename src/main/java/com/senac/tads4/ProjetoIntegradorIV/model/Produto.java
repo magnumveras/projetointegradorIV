@@ -89,13 +89,13 @@ public class Produto implements Serializable {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "codigoimagem",nullable=false) //Pega o codigo da tabela Imagem
-    private Imagem Imagem;
+    private ImagemProduto Imagem;
 
     public Produto(){
         super();
     }
     
-    public Produto(Integer codigo, String nome, String descricao, BigDecimal precoCompra, BigDecimal precoVenda, Integer estoque, Fornecedor fornecedor, Categoria categoria, Imagem Imagem) {
+    public Produto(Integer codigo, String nome, String descricao, BigDecimal precoCompra, BigDecimal precoVenda, Integer estoque, Fornecedor fornecedor, Categoria categoria, ImagemProduto Imagem) {
         this.codigo = codigo;
         this.nome = nome;
         this.descricao = descricao;
@@ -171,11 +171,11 @@ public class Produto implements Serializable {
         this.categoria = categoria;
     }
 
-    public Imagem getImagem() {
+    public ImagemProduto getImagem() {
         return Imagem;
     }
 
-    public void setImagem(Imagem Imagem) {
+    public void setImagem(ImagemProduto Imagem) {
         this.Imagem = Imagem;
     }
 
