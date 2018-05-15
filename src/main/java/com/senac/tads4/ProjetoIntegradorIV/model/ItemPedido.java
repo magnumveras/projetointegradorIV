@@ -33,7 +33,7 @@ public class ItemPedido implements Serializable{
     @JoinColumn(name = "codigopedido", nullable=false) //Pega o codigo da tabela Pedido
     private Pedido pedido;
     
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "codigoproduto", nullable=false) //Pega o codigo da tabela Produto
     private Produto produto;
     
