@@ -20,7 +20,7 @@ import javax.persistence.ManyToOne;
  * @author magno
  */
 
-@Entity(name = "ItemCarrinho")
+@Entity(name = "itemcarrinho")
 public class ItemCarrinho implements Serializable{
     
     @Id

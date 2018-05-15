@@ -21,7 +21,7 @@ import org.hibernate.annotations.ManyToAny;
  *
  * @author magno
  */
-@Entity(name = "ItemPedido")
+@Entity(name = "itempedido")
 public class ItemPedido implements Serializable{
     
     @Id

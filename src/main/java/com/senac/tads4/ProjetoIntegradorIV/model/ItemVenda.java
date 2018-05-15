@@ -19,7 +19,7 @@ import javax.persistence.ManyToOne;
  *
  * @author magno
  */
-@Entity(name = "ItemVenda")
+@Entity(name = "itemvenda")
 public class ItemVenda implements Serializable{
     @Id
     @Column(name = "codigo", nullable=false)
