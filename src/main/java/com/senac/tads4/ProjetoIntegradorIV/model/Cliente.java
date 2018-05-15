@@ -14,7 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 /**
@@ -22,7 +21,6 @@ import javax.validation.constraints.Size;
  * @author magno
  */
 @Entity(name = "Cliente")
-@Table(name = "Cliente")
 public class Cliente implements Serializable{
     
     @Id
@@ -34,27 +32,27 @@ public class Cliente implements Serializable{
     @Column(name = "nome", length = 30, nullable=false)
     private String nome;
     
-   // @Size(min = 1, max = 70)
-  //  @Column(name = "sobrenome", length = 70, nullable=false)
-   // private String sobrenome;
+    @Size(min = 1, max = 70)
+    @Column(name = "sobrenome", length = 70, nullable=false)
+    private String sobrenome;
         
-  //  @Size(min = 1, max = 15)
-  //  @Column(name = "sexo", length = 15, nullable=false)
-  //  private String sexo;
+    @Size(min = 1, max = 15)
+    @Column(name = "sexo", length = 15, nullable=false)
+    private String sexo;
     
- //   @Size(min = 14, max = 14)
-   // @Column(name = "cpf", length = 14, nullable=false)
- //   private String cpf;
+    @Size(min = 14, max = 14)
+    @Column(name = "cpf", length = 14, nullable=false)
+    private String cpf;
    
-   // @Size(min = 12, max = 12)
-  //  @Column(name = "rg", length = 12, nullable=false)
-   // private String rg;
+    @Size(min = 12, max = 12)
+    @Column(name = "rg", length = 12, nullable=false)
+    private String rg;
     
-    @Size(min = 8, max = 10)
+    @Size(min = 10, max = 10)
     @Column(name = "datanasc", length = 10)
     private String datanasc;
     
-    @Size(min = 8, max = 14)
+    @Size(min = 14, max = 14)
     @Column(name = "telefone", length = 14)
     private String telefone;
     
@@ -62,9 +60,9 @@ public class Cliente implements Serializable{
     @Column(name = "email", length = 60)
     private String email;
     
-   // @Size(min = 1, max = 70)
-   // @Column(name = "endereco", length = 70, nullable = false)
-   // private String endereco;
+    @Size(min = 1, max = 70)
+    @Column(name = "endereco", length = 70, nullable = false)
+    private String endereco;
     
     @Size(min = 1, max = 10)
     @Column(name = "numero", length = 10, nullable = false)
@@ -82,7 +80,7 @@ public class Cliente implements Serializable{
     @Column(name = "cidade", length = 30, nullable = false)
     private String cidade;
     
-    @Size(min = 2, max = 10)
+    @Size(min = 2, max = 2)
     @Column(name = "estado", length = 2, nullable = false)
     private String estado;
     
@@ -90,36 +88,25 @@ public class Cliente implements Serializable{
     @Column(name = "cep", length = 9, nullable = false)
     private String cep;
     
-    @Size(min = 1, max = 9)
-    @Column(name = "rua", length = 9, nullable = false)
-    private String rua;    
-    
-   // @OneToOne
-   // @JoinColumn(name = "codigousuario",nullable=false) //Pega o codigo da tabela Usuario
-    @Size(min = 1, max = 9)
-    @Column(name = "usuario", length = 9, nullable = false)
-    private String usuario;
-    
-    @Size(min = 1, max = 8)
-    @Column(name = "senha", length = 9, nullable = false)
-    private String senha;
-    
+    @OneToOne
+    @JoinColumn(name = "codigousuario",nullable=false) //Pega o codigo da tabela Usuario
+    private Usuario usuario;
+
     public Cliente() {
         super();
     }
 
-    public Cliente(String rua,Integer codigo, String nome, /*  String sobrenome,String sexo, String cpf, String rg,*/ String datanasc, String telefone, String email,/* String endereco, */ String numero, String bairro, String complemento, String cidade, String estado, String cep, String usuario, String senha) {
-        this.rua = rua;
+    public Cliente(Integer codigo, String nome, String sobrenome, String sexo, String cpf, String rg, String datanasc, String telefone, String email, String endereco, String numero, String bairro, String complemento, String cidade, String estado, String cep, Usuario usuario) {
         this.codigo = codigo;
         this.nome = nome;
-        //this.sobrenome = sobrenome;
-       // this.sexo = sexo;
-       // this.cpf = cpf;
-      //  this.rg = rg;
+        this.sobrenome = sobrenome;
+        this.sexo = sexo;
+        this.cpf = cpf;
+        this.rg = rg;
         this.datanasc = datanasc;
         this.telefone = telefone;
         this.email = email;
-       // this.endereco = endereco;
+        this.endereco = endereco;
         this.numero = numero;
         this.bairro = bairro;
         this.complemento = complemento;
@@ -127,18 +114,8 @@ public class Cliente implements Serializable{
         this.estado = estado;
         this.cep = cep;
         this.usuario = usuario;
-        this.senha = senha;
     }
 
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
-
-   
     public Integer getCodigo() {
         return codigo;
     }
@@ -155,37 +132,37 @@ public class Cliente implements Serializable{
         this.nome = nome;
     }
 
-   // public String getSobrenome() {
-  //      return sobrenome;
-  //  }
+    public String getSobrenome() {
+        return sobrenome;
+    }
 
-  //  public void setSobrenome(String sobrenome) {
-  //      this.sobrenome = sobrenome;
-  //  }
+    public void setSobrenome(String sobrenome) {
+        this.sobrenome = sobrenome;
+    }
 
-   // public String getSexo() {
-   //     return sexo;
-  //  }
+    public String getSexo() {
+        return sexo;
+    }
 
-  //  public void setSexo(String sexo) {
-  //      this.sexo = sexo;
-  //  }
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
 
-   // public String getCpf() {
-   //     return cpf;
-  //  }
+    public String getCpf() {
+        return cpf;
+    }
 
-   // public void setCpf(String cpf) {
-   //     this.cpf = cpf;
-   // }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
-   // public String getRg() {
- //       return rg;
-   // }
+    public String getRg() {
+        return rg;
+    }
 
-   // public void setRg(String rg) {
-   //     this.rg = rg;
-   // }
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
 
     public String getDatanasc() {
         return datanasc;
@@ -211,13 +188,13 @@ public class Cliente implements Serializable{
         this.email = email;
     }
 
-   // public String getEndereco() {
-  //      return endereco;
-   // }
+    public String getEndereco() {
+        return endereco;
+    }
 
-   // public void setEndereco(String endereco) {
-  //      this.endereco = endereco;
-   // }
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 
     public String getNumero() {
         return numero;
@@ -267,20 +244,12 @@ public class Cliente implements Serializable{
         this.cep = cep;
     }
 
-    public String getUsuario() {
+    public Usuario getUsuario() {
         return usuario;
     }
 
-    public void setUsuario(String usuario) {
+    public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
-    }
-
-    public String getRua() {
-        return rua;
-    }
-
-    public void setRua(String rua) {
-        this.rua = rua;
     }
     
     /*public String getRua() {
