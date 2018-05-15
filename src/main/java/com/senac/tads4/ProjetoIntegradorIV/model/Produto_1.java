@@ -11,7 +11,6 @@
  * furnished to do so, subject to the following conditions:
  *
  * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -49,8 +48,8 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "Produto")
-public class Produto implements Serializable {
+@Table(name = "ProdutoOld")
+public class Produto_1 implements Serializable {
 
     @Id
     @Column(name = "Codigo")
@@ -79,33 +78,33 @@ public class Produto implements Serializable {
             scale = 0, nullable = false)
     private Integer estoque;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "codigofornecedor",nullable=false) //Pega o codigo da tabela Fornecedor
-    private Fornecedor fornecedor;
+    //@OneToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "codigofornecedor",nullable=false) //Pega o codigo da tabela Fornecedor
+    //private Fornecedor fornecedor;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "codigocategoria",nullable=false) //Pega o codigo da tabela Categoria
-    private Categoria categoria;
+    //@OneToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "codigocategoria",nullable=false) //Pega o codigo da tabela Categoria
+    //private Categoria categoria;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "codigoimagem",nullable=false) //Pega o codigo da tabela Imagem
-    private Imagem Imagem;
+    //@OneToOne(fetch = FetchType.LAZY)
+    //@JoinColumn(name = "codigoimagem",nullable=false) //Pega o codigo da tabela Imagem
+    //private Imagem Imagem;
 
-    public Produto(){
+    public Produto_1(){
         super();
     }
     
-    public Produto(Integer codigo, String nome, String descricao, BigDecimal precoCompra, BigDecimal precoVenda, Integer estoque, Fornecedor fornecedor, Categoria categoria, Imagem Imagem) {
+    /*public Produto_1(Integer codigo, String nome, String descricao, BigDecimal precoCompra, BigDecimal precoVenda, Integer estoque, Fornecedor fornecedor, Categoria categoria, Imagem Imagem) {
         this.codigo = codigo;
         this.nome = nome;
         this.descricao = descricao;
         this.precoCompra = precoCompra;
         this.precoVenda = precoVenda;
         this.estoque = estoque;
-        this.fornecedor = fornecedor;
-        this.categoria = categoria;
-        this.Imagem = Imagem;
-    }
+        //this.fornecedor = fornecedor;
+        //this.categoria = categoria;
+        //this.Imagem = Imagem;
+    }*/
 
     public Integer getCodigo() {
         return codigo;
@@ -155,34 +154,34 @@ public class Produto implements Serializable {
         this.estoque = estoque;
     }
 
-    public Fornecedor getFornecedor() {
-        return fornecedor;
-    }
+    //public Fornecedor getFornecedor() {
+        //return fornecedor;
+    //}
 
-    public void setFornecedor(Fornecedor fornecedor) {
-        this.fornecedor = fornecedor;
-    }
+    //public void setFornecedor(Fornecedor fornecedor) {
+        //this.fornecedor = fornecedor;
+    //}
 
-    public Categoria getCategoria() {
-        return categoria;
-    }
+    //public Categoria getCategoria() {
+        //return categoria;
+    //}
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
+    //public void setCategoria(Categoria categoria) {
+        //this.categoria = categoria;
+    //}
 
-    public Imagem getImagem() {
-        return Imagem;
-    }
+    //public Imagem getImagem() {
+        //return Imagem;
+    //}
 
-    public void setImagem(Imagem Imagem) {
-        this.Imagem = Imagem;
-    }
+    //public void setImagem(Imagem Imagem) {
+        //this.Imagem = Imagem;
+    //}
 
-    @Override
-    public String toString() {
-        return "Produto{" + "codigo=" + codigo + ", nome=" + nome + ", descricao=" + descricao + ", precoCompra=" + precoCompra + ", precoVenda=" + precoVenda + ", estoque=" + estoque + ", fornecedor=" + fornecedor + ", categoria=" + categoria + ", Imagem=" + Imagem + '}';
-    }
+    //@Override
+    //public String toString() {
+        //return "Produto{" + "codigo=" + codigo + ", nome=" + nome + ", descricao=" + descricao + ", precoCompra=" + precoCompra + ", precoVenda=" + precoVenda + ", estoque=" + estoque + ", fornecedor=" + fornecedor + ", categoria=" + categoria + ", Imagem=" + Imagem + '}';
+    //}
 
 
 }

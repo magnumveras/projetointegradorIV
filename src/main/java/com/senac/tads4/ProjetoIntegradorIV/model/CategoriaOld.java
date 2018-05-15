@@ -24,89 +24,81 @@
 package com.senac.tads4.ProjetoIntegradorIV.model;
 
 import java.io.Serializable;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TB_IMAGEM")
-public class ImagemProduto implements Serializable {
+@Table(name = "TB_CATEGORIA")
+@NamedQueries({
+  @NamedQuery(name = "Categoria.findAll",
+          query = "SELECT c FROM Categoria c")
+  ,
+  @NamedQuery(name = "Categoria.findById",
+          query = "SELECT c FROM Categoria c WHERE c.id = :idCat")
+})
+public class CategoriaOld implements Serializable {
 
   @Id
-  @Column(name = "ID_IMAGEM")
+  @Column(name = "ID_CATEGORIA")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Integer id;
 
-  @Column(name = "NM_IMAGEM", nullable = false)
-  private String nomeArquivo;
+  @Column(name = "NM_CATEGORIA", length = 100,
+          nullable = false, unique = true)
+  private String nome;
 
-  @Column(name = "DS_IMAGEM")
-  private String legenda;
+  //@ManyToMany(mappedBy = "categorias", fetch = FetchType.LAZY)
+  //private Set<Produto> produtos;
 
-  //@ManyToOne(fetch = FetchType.LAZY)
-  //@JoinColumn(name = "ID_PRODUTO")
-  //private Produto produto;
-
-  public ImagemProduto() {
+  public CategoriaOld() {
 
   }
 
-  public ImagemProduto(Long id, String nomeArquivo, String legenda) {
+  public CategoriaOld(Integer id, String nome) {
     this.id = id;
-    this.nomeArquivo = nomeArquivo;
-    this.legenda = legenda;
+    this.nome = nome;
   }
 
-  public ImagemProduto(String nomeArquivo, String legenda) {
-    this.nomeArquivo = nomeArquivo;
-    this.legenda = legenda;
+  public CategoriaOld(String nome) {
+    this.nome = nome;
   }
 
-  public Long getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(Long id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
-  public String getNomeArquivo() {
-    return nomeArquivo;
+  public String getNome() {
+    return nome;
   }
 
-  public void setNomeArquivo(String nomeArquivo) {
-    this.nomeArquivo = nomeArquivo;
+  public void setNome(String nome) {
+    this.nome = nome;
   }
 
-  public String getLegenda() {
-    return legenda;
-  }
-
-  public void setLegenda(String legenda) {
-    this.legenda = legenda;
-  }
-
- // public Produto getProduto() {
-   // return produto;
+  //public Set<Produto> getProdutos() {
+    //return produtos;
   //}
 
-  //public void setProduto(Produto produto) {
-    //this.produto = produto;
-  //}
-
-  //public String getUrlArquivo() {
-    //return "http://localhost:8080/imagens/" + nomeArquivo;
+  //public void setProdutos(Set<Produto> produtos) {
+    //this.produtos = produtos;
   //}
 
   //@Override
   //public String toString() {
-    //return "ImagemProduto{" + "id=" + id + ", legenda=" + legenda + ", nomeArquivo=" + nomeArquivo + '}';
+    //return "Categoria{" + "id=" + id + ", nome=" + nome + '}';
   //}
 
 }

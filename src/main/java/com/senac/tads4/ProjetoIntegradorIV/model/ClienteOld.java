@@ -21,9 +21,9 @@ import javax.validation.constraints.Size;
  *
  * @author magno
  */
-@Entity(name = "Cliente")
-@Table(name = "Cliente")
-public class Cliente implements Serializable{
+@Entity(name = "ClienteOld")
+@Table(name = "ClienteOld")
+public class ClienteOld implements Serializable{
     
     @Id
     @Column(name = "codigo", nullable=false)
@@ -104,11 +104,11 @@ public class Cliente implements Serializable{
     @Column(name = "senha", length = 9, nullable = false)
     private String senha;
     
-    public Cliente() {
+    public ClienteOld() {
         super();
     }
 
-    public Cliente(String rua,Integer codigo, String nome, /*  String sobrenome,String sexo, String cpf, String rg,*/ String datanasc, String telefone, String email,/* String endereco, */ String numero, String bairro, String complemento, String cidade, String estado, String cep, String usuario, String senha) {
+    public ClienteOld(String rua,Integer codigo, String nome, /*  String sobrenome,String sexo, String cpf, String rg,*/ String datanasc, String telefone, String email,/* String endereco, */ String numero, String bairro, String complemento, String cidade, String estado, String cep, String usuario, String senha) {
         this.rua = rua;
         this.codigo = codigo;
         this.nome = nome;
@@ -283,12 +283,8 @@ public class Cliente implements Serializable{
         this.rua = rua;
     }
     
-    /*public String getRua() {
-        return rua;
-    }   
-
-    public void setRua(String rua) {
-        this.rua = rua;
-    }*/
+    
+    
+    
     
 }
