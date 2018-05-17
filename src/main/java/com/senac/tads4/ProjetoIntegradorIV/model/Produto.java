@@ -26,6 +26,8 @@ package com.senac.tads4.ProjetoIntegradorIV.model;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -49,11 +51,11 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "Produto")
+@Table(name = "produto")
 public class Produto implements Serializable {
 
     @Id
-    @Column(name = "Codigo")
+    @Column(name = "codigo")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer codigo;
 
@@ -78,34 +80,26 @@ public class Produto implements Serializable {
     @Column(name = "estoque", precision = 6,
             scale = 0, nullable = false)
     private Integer estoque;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "codigofornecedor",nullable=false) //Pega o codigo da tabela Fornecedor
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_fornecedor", nullable = false)
     private Fornecedor fornecedor;
-
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "codigocategoria",nullable=false) //Pega o codigo da tabela Categoria
+    
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fk_categoria", nullable = false)
     private Categoria categoria;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "codigoimagem",nullable=false) //Pega o codigo da tabela Imagem
-    private ImagemProduto Imagem;
+    /*@OneToMany(fetch = FetchType.LAZY,
+          cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(name = "codigoimagem",nullable=false)
+    private Set<ImagemProduto> imagens;*/
 
     public Produto(){
         super();
     }
+
     
-    public Produto(Integer codigo, String nome, String descricao, BigDecimal precoCompra, BigDecimal precoVenda, Integer estoque, Fornecedor fornecedor, Categoria categoria, ImagemProduto Imagem) {
-        this.codigo = codigo;
-        this.nome = nome;
-        this.descricao = descricao;
-        this.precoCompra = precoCompra;
-        this.precoVenda = precoVenda;
-        this.estoque = estoque;
-        this.fornecedor = fornecedor;
-        this.categoria = categoria;
-        this.Imagem = Imagem;
-    }
 
     public Integer getCodigo() {
         return codigo;
@@ -155,6 +149,14 @@ public class Produto implements Serializable {
         this.estoque = estoque;
     }
 
+    /*public Set<ImagemProduto> getImagens() {
+        return imagens;
+    }
+
+    public void setImagens(Set<ImagemProduto> imagens) {
+        this.imagens = imagens;
+    }*/
+
     public Fornecedor getFornecedor() {
         return fornecedor;
     }
@@ -171,18 +173,5 @@ public class Produto implements Serializable {
         this.categoria = categoria;
     }
 
-    public ImagemProduto getImagem() {
-        return Imagem;
-    }
-
-    public void setImagem(ImagemProduto Imagem) {
-        this.Imagem = Imagem;
-    }
-
-    @Override
-    public String toString() {
-        return "Produto{" + "codigo=" + codigo + ", nome=" + nome + ", descricao=" + descricao + ", precoCompra=" + precoCompra + ", precoVenda=" + precoVenda + ", estoque=" + estoque + ", fornecedor=" + fornecedor + ", categoria=" + categoria + ", Imagem=" + Imagem + '}';
-    }
-
-
+    
 }

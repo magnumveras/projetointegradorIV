@@ -24,6 +24,7 @@
 package com.senac.tads4.ProjetoIntegradorIV.model;
 
 import java.io.Serializable;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -31,58 +32,58 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TB_IMAGEM")
+@Table(name = "imagem")
 public class ImagemProduto implements Serializable {
 
   @Id
-  @Column(name = "ID_IMAGEM")
+  @Column(name = "codigo")
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Long id;
+  private Long codigo;
 
-  @Column(name = "NM_IMAGEM", nullable = false)
-  private String nomeArquivo;
-
-  @Column(name = "DS_IMAGEM")
+  @Column(name = "legenda", nullable = false)
   private String legenda;
+
+  @Column(name = "nome")
+  private String nome;
 
   //@ManyToOne(fetch = FetchType.LAZY)
   //@JoinColumn(name = "ID_PRODUTO")
   //private Produto produto;
 
   public ImagemProduto() {
-
+      super();
   }
 
-  public ImagemProduto(Long id, String nomeArquivo, String legenda) {
-    this.id = id;
-    this.nomeArquivo = nomeArquivo;
-    this.legenda = legenda;
-  }
+    public ImagemProduto(Long codigo, String legenda, String nome) {
+        this.codigo = codigo;
+        this.legenda = legenda;
+        this.nome = nome;
+    }
+  
+  
 
-  public ImagemProduto(String nomeArquivo, String legenda) {
-    this.nomeArquivo = nomeArquivo;
-    this.legenda = legenda;
-  }
+    public Long getCodigo() {
+        return codigo;
+    }
 
-  public Long getId() {
-    return id;
-  }
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
+    }
 
-  public void setId(Long id) {
-    this.id = id;
-  }
+    public String getNome() {
+        return nome;
+    }
 
-  public String getNomeArquivo() {
-    return nomeArquivo;
-  }
-
-  public void setNomeArquivo(String nomeArquivo) {
-    this.nomeArquivo = nomeArquivo;
-  }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+  
+  
 
   public String getLegenda() {
     return legenda;
@@ -91,22 +92,4 @@ public class ImagemProduto implements Serializable {
   public void setLegenda(String legenda) {
     this.legenda = legenda;
   }
-
- // public Produto getProduto() {
-   // return produto;
-  //}
-
-  //public void setProduto(Produto produto) {
-    //this.produto = produto;
-  //}
-
-  //public String getUrlArquivo() {
-    //return "http://localhost:8080/imagens/" + nomeArquivo;
-  //}
-
-  //@Override
-  //public String toString() {
-    //return "ImagemProduto{" + "id=" + id + ", legenda=" + legenda + ", nomeArquivo=" + nomeArquivo + '}';
-  //}
-
 }

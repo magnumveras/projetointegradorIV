@@ -1,16 +1,24 @@
 package com.senac.tads4.ProjetoIntegradorIV.model;
 
 import java.io.Serializable;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "Categoria")
+@Table(name = "categoria")
 public class Categoria implements Serializable {
 
   @Id
@@ -22,6 +30,7 @@ public class Categoria implements Serializable {
   @Column(name = "nome", length = 30,
           nullable = false, unique = true)
   private String nome;
+ 
 
   public Categoria() {
       super();
@@ -50,9 +59,7 @@ public class Categoria implements Serializable {
 
     @Override
     public String toString() {
-        return "Categoria{" + "codigo=" + codigo + ", nome=" + nome + '}';
+        return "Categoria{" + "codigo=" + codigo + ", nome=" + nome + ", produtos=" + '}';
     }
-    
-    
 
 }
