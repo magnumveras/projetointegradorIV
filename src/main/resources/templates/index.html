@@ -210,10 +210,10 @@
         <div class="row">
             <hr class="hr col-lg-12">
             <div class="col-lg-12 d-flex justify-content-center">
-                <h1 class="titulo">Lançamentos</h1>
+                <h1 class="titulo">Produtos</h1>
             </div>
             <div class="card-deck">
-                <div class="card col-lg-3 col-md-6 col-sm-6">
+                <div class="card col-lg-3 col-md-6 col-sm-6" th:each="p :${produtos}">
                     <figure>
                         <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
                                                                                           src="martin-d-100.jpg"
@@ -222,63 +222,8 @@
                     </figure>
                     <hr>
                     <div class="card-body">
-                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
-                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
-                            unidades fabricadas</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
-                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-6 col-sm-6">
-                    <figure>
-                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
-                                                                                          src="martin-d-100.jpg"
-                                                                                          th:src="@{/image/martin-d-100.jpg}"
-                                                                                          alt="Violão Martin D-100"></a>
-                    </figure>
-                    <hr>
-                    <div class="card-body">
-                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
-                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
-                            unidades fabricadas</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
-                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-6 col-sm-6">
-                    <figure>
-                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
-                                                                                          src="martin-d-100.jpg"
-                                                                                          th:src="@{/image/martin-d-100.jpg}"
-                                                                                          alt="Violão Martin D-100"></a>
-                    </figure>
-                    <hr>
-                    <div class="card-body">
-                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
-                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
-                            unidades fabricadas</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
-                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-6 col-sm-6">
-                    <figure>
-                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
-                                                                                          src="martin-d-100.jpg"
-                                                                                          th:src="@{/image/martin-d-100.jpg}"
-                                                                                          alt="Violão Martin D-100"></a>
-                    </figure>
-                    <hr>
-                    <div class="card-body">
-                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
-                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
-                            unidades fabricadas</p>
+                        <h5 class="card-title d-flex justify-content-center" th:text="${p.nome}"></h5>
+                        <p class="card-text d-flex justify-content-center" th:text="${p.descricao}"></p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary d-flex justify-content-center"><i
@@ -286,82 +231,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12" style="margin:10px"></div>
-            <div class="card-deck">
-                <div class="card col-lg-3 col-md-6 col-sm-6">
-                    <figure>
-                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
-                                                                                          src="martin-d-100.jpg"
-                                                                                          th:src="@{/image/martin-d-100.jpg}"
-                                                                                          alt="Violão Martin D-100"></a>
-                    </figure>
-                    <hr>
-                    <div class="card-body">
-                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
-                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
-                            unidades fabricadas</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
-                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-6 col-sm-6">
-                    <figure>
-                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
-                                                                                          src="martin-d-100.jpg"
-                                                                                          th:src="@{/image/martin-d-100.jpg}"
-                                                                                          alt="Violão Martin D-100"></a>
-                    </figure>
-                    <hr>
-                    <div class="card-body">
-                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
-                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
-                            unidades fabricadas</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
-                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-6 col-sm-6">
-                    <figure>
-                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
-                                                                                          src="martin-d-100.jpg"
-                                                                                          th:src="@{/image/martin-d-100.jpg}"
-                                                                                          alt="Violão Martin D-100"></a>
-                    </figure>
-                    <hr>
-                    <div class="card-body">
-                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
-                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
-                            unidades fabricadas</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
-                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
-                    </div>
-                </div>
-                <div class="card col-lg-3 col-md-6 col-sm-6">
-                    <figure>
-                        <a th:href="@{/musicstore/detalhesproduto}" class="d-flex justify-content-center"><img class="card-img-top"
-                                                                                          src="martin-d-100.jpg"
-                                                                                          th:src="@{/image/martin-d-100.jpg}"
-                                                                                          alt="Violão Martin D-100"></a>
-                    </figure>
-                    <hr>
-                    <div class="card-body">
-                        <h5 class="card-title d-flex justify-content-center">Martin D-100 Deluxe</h5>
-                        <p class="card-text d-flex justify-content-center">Modelo de luxo comemorativo de 1 milhão de
-                            unidades fabricadas</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#" class="btn btn-primary d-flex justify-content-center"><i
-                                class="fas fa-shopping-cart"></i>&ensp;Add ao Carrinho</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            
     </section>
     <nav aria-label="Page navigation example" class="pagination col-lg-12 d-flex justify-content-center">
         <ul class="pagination">
