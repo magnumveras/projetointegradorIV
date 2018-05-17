@@ -36,7 +36,7 @@ public class ClienteServiceJpaImpl implements ICliente{
     public List<Cliente> listar() {
          Query lista = entityManager.createQuery("SELECT nome,telefone,datanasc,usuario,senha,email,cep,rua,numero,complemento,bairro,cidade,estado FROM Cliente");
          List<Cliente> resultados = lista.getResultList();
-      
+      System.out.println("RESULTADO TESTE: "+resultados);
         return resultados;
     }
 

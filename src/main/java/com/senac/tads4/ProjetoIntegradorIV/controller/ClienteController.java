@@ -40,8 +40,9 @@ public class ClienteController {
   @GetMapping("/cadastroclienteconsultar")  
   public ModelAndView cadastrousuarioconsultar() {
      List<Cliente> clienteConsultar = servicoCliente.listar();
-     String teste = clienteConsultar.toString();   
-      return new ModelAndView("cadastro_cliente_consultar").addObject("clienteConsultar", servicoCliente.listar());
+     
+     System.out.println("TESTE CLIENTE CONSULTAR: "+clienteConsultar);
+      return new ModelAndView("cadastro_cliente_consultar").addObject("clienteConsultar", clienteConsultar);
   }
   
   @PostMapping("/salvar")
