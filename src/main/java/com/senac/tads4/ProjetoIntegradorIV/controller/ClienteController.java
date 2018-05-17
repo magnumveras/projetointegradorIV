@@ -8,6 +8,7 @@ package com.senac.tads4.ProjetoIntegradorIV.controller;
 import com.senac.tads4.ProjetoIntegradorIV.dao.ClienteServiceJpaImpl;
 import com.senac.tads4.ProjetoIntegradorIV.model.Cliente;
 import com.senac.tads4.ProjetoIntegradorIV.service.ICliente;
+import java.util.List;
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +35,13 @@ public class ClienteController {
   @GetMapping("/cadastrocliente")
   public ModelAndView cadastrousuario() {
     return new ModelAndView("cadastro_cliente").addObject("cliente", new Cliente());
+  }
+  
+  @GetMapping("/cadastroclienteconsultar")  
+  public ModelAndView cadastrousuarioconsultar() {
+     List<Cliente> clienteConsultar = servicoCliente.listar();
+     String teste = clienteConsultar.toString();   
+      return new ModelAndView("cadastro_cliente_consultar").addObject("clienteConsultar", servicoCliente.listar());
   }
   
   @PostMapping("/salvar")
