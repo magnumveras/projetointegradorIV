@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface ICliente extends Serializable{
     
-  public List<Cliente> listar(int offset, int quantidade);
+  public List<Cliente> listar();
 
   public Cliente obter(long codigocCliente);
 

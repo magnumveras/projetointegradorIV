@@ -51,15 +51,15 @@ public class Cliente implements Serializable{
    // private String rg;
     
     @Size(min = 8, max = 10)
-    @Column(name = "datanasc", length = 10)
+    @Column(name = "datanasc", length = 10, nullable = false)
     private String datanasc;
     
     @Size(min = 8, max = 14)
-    @Column(name = "telefone", length = 14)
+    @Column(name = "telefone", length = 14, nullable = false)
     private String telefone;
     
     @Size(min = 1, max = 60)
-    @Column(name = "email", length = 60)
+    @Column(name = "email", length = 60, nullable = false)
     private String email;
     
    // @Size(min = 1, max = 70)
@@ -75,7 +75,7 @@ public class Cliente implements Serializable{
     private String bairro;
     
     @Size(min = 1, max = 60)
-    @Column(name = "complemento", length = 60)
+    @Column(name = "complemento", length = 60, nullable = false)
     private String complemento;
     
     @Size(min = 1, max = 30)

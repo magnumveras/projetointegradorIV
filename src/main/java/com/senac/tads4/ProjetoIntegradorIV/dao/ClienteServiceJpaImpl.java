@@ -11,6 +11,7 @@ import com.senac.tads4.ProjetoIntegradorIV.service.ICliente;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 import org.springframework.stereotype.Repository;
 
@@ -31,8 +32,12 @@ public class ClienteServiceJpaImpl implements ICliente{
     }
 
     @Override
-    public List<Cliente> listar(int offset, int quantidade) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Transactional
+    public List<Cliente> listar() {
+         Query lista = entityManager.createQuery("SELECT nome,telefone,datanasc,usuario,senha,email,cep,rua,numero,complemento,bairro,cidade,estado FROM Cliente");
+         List<Cliente> resultados = lista.getResultList();
+      System.out.println("RESULTADO TESTE: "+resultados);
+        return resultados;
     }
 
     @Override

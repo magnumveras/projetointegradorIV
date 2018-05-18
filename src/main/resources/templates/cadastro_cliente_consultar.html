@@ -7,102 +7,85 @@
               integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     </head>
-    <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Web Dev Academy</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">Início</a></li>
-                        <li><a href="#">Opções</a></li>
-                        <li><a href="#">Perfil</a></li>
-                        <li><a href="#">Ajuda</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div id="main" class="container-fluid">
+    <body>       
+        <div id="main" class="container-fluid" >
             <h3 class="page-header">Template Inicial</h3>
-            <form action="index.html">
-                <div id="main" class="container-fluid">
+            <form action="index.html" th:each="c :${clienteConsultar}" >
+                <div id="main" class="container-fluid" >
                     <h3 class="page-header">Visualizar Item #1</h3>
 
-                    <div class="row">
+                    <div class="row" >
+                        
+                        
                         <div class="col-lg-4 col-md-6  col-sm-12">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled"  class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            
+                            <input disabled="disabled" th:text="${c.nome}"  class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
 
                         <div class="col-lg-4 col-md-6  col-sm-12" >
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" tth:text="${c.telefone}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
 
                         <div class="col-lg-4 col-md-6  col-sm-12">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.datanasc}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
 
                         <div class="col-lg-4 col-md-6  col-sm-12">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.usuario}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
 
                         <div class=" col-sm-12 col-md-6 col-lg-4">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.senha}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.email}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.cep}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.rua}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.numero}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
 
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.complemento}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
                         
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.bairro}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
                         
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.cidade}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
                         
                         <div class="col-sm-12 col-md-6 col-lg-4">
                             <p><strong>Campo Um</strong></p>
-                            <input type="text" disabled="disabled" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
+                            <input type="text" disabled="disabled" th:text="${c.estado}" class="form-control">Lorem ipsum dolor sit amet, consectetur adipiscing.</input>
                         </div>
                          
                     </div>
-                    <div class="row" >
+                 
+                      <div class="row" >
                       
                     <div class="col-lg-2 col-md-6 col-sm-12">
                         <button type="submit" class="btn btn-primary btn-block">Editar</button>
@@ -112,10 +95,12 @@
                     <button type="submit" class="btn btn-primary btn-block">Excluir</button>
                         </div>
                          
-                    </div>
-                       
-            </form>
+                    </div> 
         </div>
+                   
+      </form>
+
+                </div>
 
 
         <footer class="container col-lg-12">
