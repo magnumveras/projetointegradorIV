@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Produto Cadastrado</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div th:if="${produtoCadastrado != null}">
+      <h1>Produto <span th:text="${produtoCadastrado.nome}"></span> Cadastrado com sucesso</h1>
+      <p th:text="${produtoCadastrado.descricao}"></p>
+      <p th:text="${produtoCadastrado.precoCompra}"></p>
+      <p th:text="${produtoCadastrado.precoVenda}"></p>
+      <p th:text="${produtoCadastrado.estoque}"></p>
+      <a th:href="@{/gerenciamento/produto/formulario}">Voltar</a>
+    </div>
+    <div th:if="${produtoCadastrado == null}">
+      <h1>Acesso inválido</h1>
+    </div>
+  </body>
+</html>

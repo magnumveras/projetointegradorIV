@@ -12,6 +12,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+import javax.transaction.Transactional;
 import org.hibernate.Session;
 import org.hibernate.criterion.Example;
 import static org.springframework.jdbc.core.JdbcOperationsExtensionsKt.query;
@@ -24,6 +25,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class ProdutoServiceJpaImpl implements ProdutoService{
     
+    //Lista todos os produtos da empresa
     @PersistenceContext
     private EntityManager entityManager;
     
@@ -42,15 +44,17 @@ public class ProdutoServiceJpaImpl implements ProdutoService{
     public List<Produto> listarPorCategoria(Categoria categoria, int offset, int quantidade) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     @Override
     public Produto obter(long idProduto) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+    //Inclui um novo produto no banco de dados
     @Override
+    @Transactional
     public void incluir(Produto p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        entityManager.persist(p);
     }
 
     @Override

@@ -87,78 +87,32 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Cordas
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Violão</a>
-                            <a class="dropdown-item" href="#">Guitarra</a>
-                            <a class="dropdown-item" href="#">Baixo</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Amplificadores</a>
-                            <a class="dropdown-item" href="#">Encordoamentos</a>
-                            <a class="dropdown-item" href="#">Efeitos</a>
-                            <a class="dropdown-item" href="#">Acessórios</a>
-                        </div>
+                            Áudio Profissional
+                        </a>  
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Percussão
+                            Bateria & Percussão
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Cordas & Acessórios
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Pianos & Teclados
+                        </a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link" href="#" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Sopro
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Teclas
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Áudio
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Acessórios
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
                     </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
@@ -224,6 +178,11 @@
                     <div class="card-body">
                         <h5 class="card-title d-flex justify-content-center" th:text="${p.nome}"></h5>
                         <p class="card-text d-flex justify-content-center" th:text="${p.descricao}"></p>
+                        <p class="card-text d-flex justify-content-center" th:text="${p.fornecedor.nome}"></p>
+                        <p class="card-text d-flex justify-content-center" th:text="${p.categoria.nome}"></p>
+                        <p class="card-text d-flex justify-content-center" th:text="${p.precoCompra}"></p>
+                        <p class="card-text d-flex justify-content-center" th:text="${p.precoVenda}"></p>
+                        <p class="card-text d-flex justify-content-center" th:text="${p.estoque}"></p>
                     </div>
                     <div class="card-footer">
                         <a href="#" class="btn btn-primary d-flex justify-content-center"><i

@@ -90,16 +90,35 @@ public class Produto implements Serializable {
     @JoinColumn(name = "fk_categoria", nullable = false)
     private Categoria categoria;
 
-    /*@OneToMany(fetch = FetchType.LAZY,
+    /*@ManyToMany(fetch = FetchType.LAZY,
           cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(name = "codigoimagem",nullable=false)
+    @JoinColumn(name = "fk_imagens",nullable=false)
     private Set<ImagemProduto> imagens;*/
+    
+    @Column(name = "datacadastro", nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date datacadastro;
 
     public Produto(){
         super();
     }
 
+    /*public Set<ImagemProduto> getImagens() {
+        return imagens;
+    }
+
+    public void setImagens(Set<ImagemProduto> imagens) {
+        this.imagens = imagens;
+    }*/
     
+    
+    public Date getDatacadastro() {
+        return datacadastro;
+    }
+
+    public void setDatacadastro(Date datacadastro) {
+        this.datacadastro = datacadastro;
+    }
 
     public Integer getCodigo() {
         return codigo;

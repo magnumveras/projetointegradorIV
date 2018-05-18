@@ -50,11 +50,14 @@ public class ImagemProduto implements Serializable {
 
   @Column(name = "nome")
   private String nome;
+ 
 
   //@ManyToOne(fetch = FetchType.LAZY)
   //@JoinColumn(name = "ID_PRODUTO")
   //private Produto produto;
 
+  
+  
   public ImagemProduto() {
       super();
   }
