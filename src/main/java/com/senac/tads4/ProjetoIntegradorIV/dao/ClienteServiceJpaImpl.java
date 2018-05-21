@@ -34,7 +34,7 @@ public class ClienteServiceJpaImpl implements ICliente{
     @Override
     @Transactional
     public List<Cliente> listar() {
-         Query lista = entityManager.createQuery("SELECT nome,telefone,datanasc,usuario,senha,email,cep,rua,numero,complemento,bairro,cidade,estado FROM Cliente");
+         Query lista = entityManager.createQuery("SELECT DISTINCT c FROM Cliente c");
          List<Cliente> resultados = lista.getResultList();
       System.out.println("RESULTADO TESTE: "+resultados);
         return resultados;

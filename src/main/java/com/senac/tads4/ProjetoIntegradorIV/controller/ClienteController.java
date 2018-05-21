@@ -48,7 +48,8 @@ public class ClienteController {
   @PostMapping("/salvar")
   public ModelAndView salvar(@ModelAttribute("cliente") @Valid Cliente cliente ,
           BindingResult bindingResult,
-          RedirectAttributes redirectAttributes) {
+          RedirectAttributes redirectAttributes) {    
+      
     // @ModelAttribute - indica para o Spring que as informacoes preenchidas
     // no form HTML serao populadas no objeto produto
     // @Valid - indica que o objeto será validado de acordo com as configurações
@@ -68,6 +69,32 @@ public class ClienteController {
     redirectAttributes.addFlashAttribute("clienteCadastrar", cliente);
     return new ModelAndView("redirect:/musicstore/home");
   }
+  
+  
+  
+  @PostMapping("/excluir")
+  public ModelAndView excluir(@ModelAttribute("clienteExcluir") @Valid Cliente cliente,
+          BindingResult bindingResult,
+          RedirectAttributes redirectAttributes) {    
+      
+    // @ModelAttribute - indica para o Spring que as informacoes preenchidas
+    // no form HTML serao populadas no objeto produto
+    // @Valid - indica que o objeto será validado de acordo com as configurações
+    // feitas na classe Produto
+   
+    
+    //if (bindingResult.hasErrors()) {
+      //return new ModelAndView("/produto/formulario");
+    //}     
+   
+    if (cliente.getCodigo() == null) {
+      servicoCliente.remover(cliente.getCodigo());
+    } 
+   
+    redirectAttributes.addFlashAttribute("clienteExcluir", cliente);
+    return new ModelAndView("redirect:/musicstore/home");
+  }
+  
  @GetMapping("/resultado")
   public ModelAndView mostrarResultado() {
     return new ModelAndView("/index");
